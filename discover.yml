@@ -1,0 +1,22 @@
+name: Discover local events
+on:
+  schedule:
+    - cron: '25 14 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python discover.py
+      - name: Commit new leads
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add discovered-events.json
+          git diff --cached --quiet || (git commit -m 'Refresh event leads' && git push)
