@@ -39,9 +39,26 @@
 .cal-reminder{border-left:5px solid var(--evt-border,#A7BACD);background:var(--evt-bg,#F0F8F6);align-items:flex-start}
 .cal-reminder span{display:flex;gap:7px;align-items:flex-start}
 .cal-reminder small{white-space:nowrap}
+.cal-projection-notice{margin:10px 0;padding:10px 12px;border:1px solid #d5bf87;border-radius:9px;background:#fff7e6;color:#684d24;font-size:12px;line-height:1.5}
+.cal-event-chip.projected{border-style:dashed;background:#fff5df!important;border-left-color:#bd8e40!important;color:#604721}
+.cal-event-chip.projected .cal-chip-meta{opacity:1;font-weight:800;color:#825a20}
+.cal-projection-key{display:inline-block;font-size:10px;font-weight:800;color:#865a13;border:1px dashed #bd8e40;background:#fff5df;border-radius:5px;padding:3px 6px}
 .cal-summary{font-size:12px;color:#536d79;margin:3px 0 12px}
 @media(max-width:760px){.calendar-grid{min-width:770px}.cal-day{min-height:150px}.cal-event-chip{font-size:10px;padding:5px 4px}}
 
+
+/* Calendar category view: one selected navigation item, dated and month-only chips */
+.sidebar .nav.active{background:#dceceb!important;color:#263a61!important;border-color:#9dd1cb;box-shadow:inset 3px 0 #b98d42}
+.sidebar .nav:not(.active){background:transparent!important;color:#e9f4ff!important;border-color:transparent!important;box-shadow:none!important}
+.sidebar .nav:not(.active) .count{background:#405779!important;color:#f5f7ff!important}
+@media(hover:hover){.sidebar .nav:not(.active):hover{background:#3b527b!important}}
+.cal-month-reminders{grid-column:1/-1;background:#f6f1ff;padding:12px;border-bottom:2px solid #cfbde4;border-right:1px solid #cbdedb}
+.cal-month-reminder-heading{display:block;font-size:12px;color:#453767;margin-bottom:9px}
+.cal-month-reminder-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:8px}
+.cal-month-chip{min-width:0;display:flex;flex-direction:column;gap:5px;text-align:left;border:1px solid var(--evt-border);border-left:5px solid var(--evt-border);border-radius:9px;background:var(--evt-bg);color:#24384c;padding:9px 10px;font-size:12px;font-weight:800;line-height:1.4;overflow-wrap:anywhere}
+.cal-month-chip small{font-size:10px;font-weight:650;color:#4d5e70}
+.cal-month-chip:hover,.cal-month-chip:focus-visible{outline:2px solid #b98d42;outline-offset:1px}
+@media(max-width:760px){.cal-month-reminder-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -58,7 +75,7 @@
 <div class="notice" id="dashboardNotice">Starter entries are planning leads, not verified schedules. Confirm event dates, organizer details, booth rules and flyer permissions. Your added events are stored in this browser only—export a backup regularly.</div>
 <div class="toolbar"><input id="search" placeholder="Search events, city, organizer, notes…" aria-label="Search events"><select id="month"><option value="">All months</option></select><select id="status"><option value="">All outreach statuses</option><option>Researching</option><option>Contacted</option><option>Awaiting approval</option><option>Approved</option><option>Completed</option><option>Not permitted</option></select></div>
 <section id="calendarPanel" class="panel calendar-panel hidden" aria-label="Event calendar">
-  <div class="calendar-header"><div><h3>Event calendar</h3><p class="muted">Confirmed dates appear on their day. Recurring events without confirmed dates appear below as planning reminders.</p></div><div class="calendar-controls"><button class="btn secondary small" type="button" id="calPrev" aria-label="Previous month">‹</button><strong id="calendarHeading" aria-live="polite"></strong><button class="btn secondary small" type="button" id="calNext" aria-label="Next month">›</button><button class="btn secondary small" type="button" id="calToday">Today</button></div></div>
+  <div class="calendar-header"><div><h3>Event calendar</h3><p class="muted">Confirmed events appear on their actual days. Projected planning dates are labeled ESTIMATE and based on past event timing or recurring observances; check the organizer before scheduling outreach.</p></div><div class="calendar-controls"><button class="btn secondary small" type="button" id="calPrev" aria-label="Previous month">‹</button><strong id="calendarHeading" aria-live="polite"></strong><button class="btn secondary small" type="button" id="calNext" aria-label="Next month">›</button><button class="btn secondary small" type="button" id="calToday">Today</button></div></div>
   <div id="calendarSummary" class="cal-summary"></div><div class="cal-legend" aria-label="Event category colors"><span><i style="--legend:#8B6EAF"></i>Black heritage</span><span><i style="--legend:#0F8E86"></i>Hispanic / Latino</span><span><i style="--legend:#B98D42"></i>Native American</span><span><i style="--legend:#5079A9"></i>Multicultural</span></div>
   <div class="calendar-scroll"><div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Monthly event calendar"></div></div>
   <div id="calendarMonthOnly" class="calendar-undated"></div>
@@ -96,8 +113,11 @@ function setSelection(view='all',cat='',type=''){
 function getFilteredEvents(){let q=$('search').value.trim().toLowerCase(),m=$('month').value,s=$('status').value;return events.filter(e=>(!q||[e.name,e.location,e.notes,e.contact,e.category,e.type].join(' ').toLowerCase().includes(q))&&(!selectedCat||e.category===selectedCat)&&(!selectedType||e.type===selectedType)&&(!m||String(e.month)===m)&&(!s||e.status===s)&&(currentView!=='annual'||e.recurring==='yes')).sort((a,b)=>(Number(a.month)||13)-(Number(b.month)||13)||a.name.localeCompare(b.name))}
 function getFilteredLeads(){const q=$('search').value.trim().toLowerCase();return leads.filter(l=>(!selectedCat||l.category===selectedCat)&&(!q||[l.title,l.category,l.search].join(' ').toLowerCase().includes(q))&&(!selectedType||new RegExp(selectedType==='Community fair'?'fair|community':selectedType==='Celebration'?'celebrat|heritage|holiday':selectedType==='Other'?'event|gathering':selectedType,'i').test([l.title,l.search].join(' '))))}
 function render(){let filtered=getFilteredEvents(),lf=getFilteredLeads();$('total').textContent=events.length;$('annual').textContent=events.filter(e=>e.recurring==='yes').length;$('approved').textContent=events.filter(e=>e.status==='Approved').length;$('pending').textContent=events.filter(e=>['Contacted','Awaiting approval'].includes(e.status)).length;$('count-all').textContent=events.length;$('count-annual').textContent=events.filter(e=>e.recurring==='yes').length;$('count-discovered').textContent=leads.length;document.querySelectorAll('[data-count]').forEach(x=>x.textContent=events.filter(e=>e.category===x.dataset.count).length);
- document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',(b.dataset.view&&(b.dataset.view===currentView||annualOnly&&b.dataset.view==='annual')&&!selectedCat&&!selectedType&&(!annualOnly||b.dataset.view==='annual'))||(b.dataset.cat&&b.dataset.cat===selectedCat)||(b.dataset.type&&b.dataset.type===selectedType)));
- let heading=selectedCat|| (selectedType?selectedType==='Parade'?'Parades':selectedType==='Community fair'?'Community fairs':selectedType+'s':currentView==='discovered'?'Discovered event leads':annualOnly?'Annual events':currentView==='calendar'?'Event calendar':'All events');$('pageTitle').textContent=heading;$('pageDesc').textContent=currentView==='discovered'?'Automatically collected news results requiring review and confirmation.':currentView==='calendar'?'Calendar filtered to this selection. Confirmed dates appear on their day; annual events without dates appear as month reminders.':'Browse all saved events and outreach planning information.';
+ // Only one sidebar navigation choice may be selected at a time.
+ const activeNav=[...document.querySelectorAll('.sidebar .nav')].find(b=>selectedCat?b.dataset.cat===selectedCat:selectedType?b.dataset.type===selectedType:annualOnly?b.dataset.view==='annual':b.dataset.view===currentView);
+ document.querySelectorAll('.sidebar .nav').forEach(b=>{b.classList.remove('active');b.removeAttribute('aria-current');});
+ if(activeNav){activeNav.classList.add('active');activeNav.setAttribute('aria-current','page');}
+ let heading=selectedCat|| (selectedType?selectedType==='Parade'?'Parades':selectedType==='Community fair'?'Community fairs':selectedType+'s':currentView==='discovered'?'Discovered event leads':annualOnly?'Annual events':currentView==='calendar'?'Event calendar':'All events');$('pageTitle').textContent=heading;$('pageDesc').textContent=currentView==='discovered'?'Automatically collected news results requiring review and confirmation.':currentView==='calendar'?'Calendar filtered to this selection. Confirmed dates appear on their exact day; undated annual events are displayed inside the calendar as month-only events.':'Browse all saved events and outreach planning information.';
  const discoveredOnly=currentView==='discovered',calendarOnly=currentView==='calendar',showDashboard=currentView==='all';
  $('dashboardStats').classList.toggle('hidden',!showDashboard);
  $('dashboardNotice').classList.toggle('hidden',!showDashboard);
@@ -126,37 +146,71 @@ function parseLocalDate(v){
  return date.getFullYear()===y&&date.getMonth()===m-1&&date.getDate()===d?date:null;
 }
 function dateKey(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+// Future dates are planning estimates only. They are not confirmed event schedules.
+// Annual observances provide a useful window but do not imply an entire festival runs that long.
+function nthWeekday(y,m,weekday,n){const first=new Date(y,m-1,1).getDay();return new Date(y,m-1,1+(weekday-first+7)%7+(n-1)*7)}
+function projectionFor(e,y){
+ if(e.recurring!=='yes'||parseLocalDate(e.date))return null;
+ const id=String(e.id||''),key=id.startsWith('starter-')?id:'';
+ let a=null,b=null,reason='',source='';
+ switch(key){
+  case 'starter-0': a=nthWeekday(y,1,1,3);reason='Based on the 2026 Las Vegas MLK Day parade and the third-Monday holiday pattern';source='https://www.clarkcountynv.gov/calendar/county-commissioners-district-d/011926-mlk-parade-mccurdy';break;
+  case 'starter-1': a=new Date(y,1,1);b=new Date(y,2,0);reason='Black History Month planning window; individual celebrations have different dates';break;
+  case 'starter-2': a=nthWeekday(y,6,6,3);reason='Estimated third Saturday in June, following the Las Vegas Juneteenth festivals held June 21, 2025 and June 20, 2026';source='https://www.lasvegasnevada.gov/Residents/Events/Details?id=25th-annual-las-vegas-juneteenth-festival';break;
+  case 'starter-3': a=new Date(y,8,15);b=new Date(y,9,15);reason='National Hispanic Heritage Month planning window, not the duration of a single festival';break;
+  case 'starter-4': a=new Date(y,8,16);reason='Mexican Independence Day; local celebrations may occur on different dates';break;
+  case 'starter-5': a=new Date(y,10,1);b=new Date(y,10,2);reason='Día de los Muertos observance; individual Las Vegas events may vary';break;
+  case 'starter-6': a=nthWeekday(y,10,1,2);reason='Indigenous Peoples’ Day (second Monday of October); local event date unconfirmed';break;
+  case 'starter-7': a=new Date(y,10,1);b=new Date(y,11,0);reason='Native American Heritage Month planning window, not the duration of a single festival';break;
+  case 'starter-8': a=new Date(y,10,11);reason='Veterans Day parade traditionally held November 11 in downtown Las Vegas';source='https://veteransactiongroup.com/faq/';break;
+  case 'starter-9': a=new Date(y,11,26);b=new Date(y+1,0,1);reason='Kwanzaa observance period; community celebration dates may differ';break;
+  default: return null;
+ }
+ return a?{start:a,end:b||a,reason,source,estimated:true,planningWindow:!!b}:null;
+}
 function renderCalendar(){
  const year=calendarCursor.getFullYear(),month=calendarCursor.getMonth(),today=new Date();
  $('calendarHeading').textContent=months[month]+' '+year;
  const query=$('search').value.trim().toLowerCase(),status=$('status').value;
  const matching=events.filter(e=>(!annualOnly||e.recurring==='yes')&&(!selectedCat||e.category===selectedCat)&&(!selectedType||e.type===selectedType)&&(!status||e.status===status)&&(!query||[e.name,e.location,e.notes,e.contact,e.category,e.type].join(' ').toLowerCase().includes(query)));
  const monthStart=new Date(year,month,1),monthEnd=new Date(year,month+1,0);
- const dated=matching.map(e=>{const start=parseLocalDate(e.date);const enteredEnd=parseLocalDate(e.endDate);return {e,start,end:enteredEnd&&start&&enteredEnd>=start?enteredEnd:start}}).filter(o=>o.start&&o.start<=monthEnd&&o.end>=monthStart);
- const reminders=matching.filter(e=>Number(e.month)===month+1&&!parseLocalDate(e.date)&&e.recurring==='yes');
- $('calendarSummary').textContent=dated.length+' dated event'+(dated.length===1?'':'s')+' shown this month · '+reminders.length+' annual planning reminder'+(reminders.length===1?'':'s')+' awaiting a confirmed day';
+ const entries=matching.map(e=>{
+   const actual=parseLocalDate(e.date),endActual=parseLocalDate(e.endDate);
+   if(actual)return {e,start:actual,end:endActual&&endActual>=actual?endActual:actual,estimated:false,reason:'Confirmed date entered in tracker',source:''};
+   const projected=projectionFor(e,year);return projected?{e,...projected}:null;
+ }).filter(Boolean);
+ // For cross-year Kwanzaa, also include previous year's Dec 26–Jan 1 projection.
+ if(month===0) matching.forEach(e=>{if(e.id==='starter-9'&&!parseLocalDate(e.date)){const previous=projectionFor(e,year-1);if(previous)entries.push({...previous,e})}});
+ const dated=entries.filter(o=>o.start<=monthEnd&&o.end>=monthStart);
+ const unresolved=matching.filter(e=>Number(e.month)===month+1&&!parseLocalDate(e.date)&&!projectionFor(e,year));
+ const confirmed=dated.filter(o=>!o.estimated).length,projected=dated.filter(o=>o.estimated).length;
+ $('calendarSummary').textContent=confirmed+' entered-date event(s) · '+projected+' projected event(s)/planning window(s) · '+unresolved.length+' without a day estimate';
  const dayNames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
  const first=monthStart.getDay(),daysInMonth=monthEnd.getDate();
  let html=dayNames.map(d=>`<div class="cal-weekday" role="columnheader">${d}</div>`).join('');
+ if(unresolved.length){
+   html+=`<div class="cal-month-reminders" role="row" aria-label="Events with dates to research"><strong class="cal-month-reminder-heading">📌 ${safe(months[month])} events — exact day not yet known</strong><div class="cal-month-reminder-list">${unresolved.map(e=>{const v=eventVisual(e);return `<button type="button" class="cal-month-chip" style="--evt-bg:${v.bg};--evt-border:${v.color}" data-cal-edit="${safe(e.id)}"><span>${v.icon} ${safe(e.name)}</span><small>📅 Date TBD · Tap to research or enter date</small></button>`}).join('')}</div></div>`;
+ }
  const cells=Math.ceil((first+daysInMonth)/7)*7;
  for(let i=0;i<cells;i++){
   const day=i-first+1,inMonth=day>=1&&day<=daysInMonth;
   if(!inMonth){html+='<div class="cal-day outside" role="gridcell"></div>';continue;}
   const currentDate=new Date(year,month,day);
   const thisDay=dated.filter(o=>o.start<=currentDate&&o.end>=currentDate).sort((a,b)=>a.start-b.start||a.e.name.localeCompare(b.e.name));
-  const buttons=thisDay.map(({e,start,end})=>{
+  const buttons=thisDay.map(({e,start,end,estimated,reason})=>{
    const v=eventVisual(e),duration=Math.round((end-start)/86400000)+1;
    const isStart=dateKey(currentDate)===dateKey(start),isEnd=dateKey(currentDate)===dateKey(end);
    const kind=duration===1?'':isStart?'cal-span-start':isEnd?'cal-span-end':'cal-span-mid';
-   const progress=duration===1?'1 day':isStart?`Day 1 of ${duration}`:isEnd?`Final day · ${duration} days`: `Day ${Math.round((currentDate-start)/86400000)+1} of ${duration}`;
+   const progress=duration===1?'1 day':isStart?`Day 1 of ${duration}`:isEnd?`Final day · ${duration} days`:`Day ${Math.round((currentDate-start)/86400000)+1} of ${duration}`;
    const prefix=!isStart&&duration>1?'↔ ':'';
-   return `<button type="button" class="cal-event-chip ${kind}" data-cal-edit="${safe(e.id)}" style="--evt-bg:${v.bg};--evt-border:${v.color}" title="${safe(e.name)} · ${safe(e.date)}${end>start?' to '+safe(dateKey(end)):''}"><span class="cal-chip-label">${v.icon} ${prefix}${safe(e.name)}</span><span class="cal-chip-meta">${safe(progress)}</span></button>`;
+   return `<button type="button" class="cal-event-chip ${kind}${estimated?' projected':''}" data-cal-edit="${safe(e.id)}" style="--evt-bg:${v.bg};--evt-border:${v.color}" title="${safe(e.name)} · ${estimated?'PROJECTION: '+reason:'Entered date'}"><span class="cal-chip-label">${v.icon} ${prefix}${safe(e.name)}</span><span class="cal-chip-meta">${estimated?'⚠ ESTIMATE · ':''}${safe(progress)}</span></button>`;
   }).join('');
   html+=`<div class="cal-day${today.getFullYear()===year&&today.getMonth()===month&&today.getDate()===day?' today':''}${thisDay.length?' cal-day-has-event':''}" role="gridcell"><div class="cal-number">${day} ${thisDay.length?`<span class="cal-day-count">${thisDay.length}</span>`:''}</div><div class="cal-events">${buttons}</div></div>`;
  }
  $('calendarGrid').innerHTML=html;
- $('calendarMonthOnly').innerHTML=`<h4>📌 ${safe(months[month])} annual events — dates to confirm (${reminders.length})</h4><p class="muted">The event names below are visible now, but their actual dates and duration are unknown. Tap an event to enter confirmed start and end dates; it will then appear on the exact calendar days.</p>`+(reminders.length?`<div class="cal-reminders">${reminders.map(e=>{const v=eventVisual(e);return `<button type="button" class="cal-reminder" style="--evt-bg:${v.bg};--evt-border:${v.color}" data-cal-edit="${safe(e.id)}"><span>${v.icon} ${safe(e.name)}</span><small>Day TBD · Edit ↗</small></button>`}).join('')}</div>`:'<p class="calendar-empty">No annual planning reminders for this month.</p>');
- $('calendarLeads').innerHTML=`<strong>${leads.length} automatically discovered news leads</strong> are kept off the dated calendar until actual event dates are verified. <button type="button" id="calendarShowLeads">Review leads</button> to check original sources, then add confirmed events with start and end dates.`;
+ const projectedDetails=dated.filter(o=>o.estimated).map(({e,start,end,reason,source})=>`<div style="padding:7px 0;border-bottom:1px solid #ead9b0"><strong>${safe(e.name)}</strong> — ${safe(dateKey(start))}${end>start?' to '+safe(dateKey(end)):''}<br><small>${safe(reason)}. ${source?`<a href="${safe(source)}" target="_blank" rel="noopener noreferrer">Historical source ↗</a>`:''}</small></div>`).join('');
+ $('calendarMonthOnly').innerHTML=`<div class="cal-projection-notice"><strong>⚠ Gold dashed = projected planning date, NOT a confirmed event schedule.</strong> These estimates use past Las Vegas event patterns or annual observances. Multi-day observance windows do not mean a festival runs every day. Tap an event to enter confirmed dates; these will take priority.${projectedDetails?'<div style="margin-top:8px">'+projectedDetails+'</div>':''}</div>`;
+ $('calendarLeads').innerHTML=`<strong>${leads.length} automatically discovered news leads</strong> are kept off the dated calendar until event dates are verified. <button type="button" id="calendarShowLeads">Review leads</button> to check original sources, then add confirmed events with start and end dates.`;
  $('calendarShowLeads').onclick=()=>setSelection('discovered');
 }
 $('calendarGrid').addEventListener('click',e=>{const b=e.target.closest('[data-cal-edit]');if(b)editEvent(b.dataset.calEdit)});
