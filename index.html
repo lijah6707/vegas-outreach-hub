@@ -249,9 +249,13 @@ function removeEvent(id){const item=events.find(e=>e.id===id&&!e.removedAt);if(!
 
 
 function setSelection(view='all',cat='',type=''){
+ // A new navigation choice always starts with the complete matching list.
+ // Filters applied on another page must never silently hide events here.
  annualOnly=view==='annual';
  currentView=(cat||type||annualOnly)?'dated':view;
  selectedCat=cat;selectedType=type;
+ $('search').value='';
+ $('status').value='';
  $('month').value='';
  const now=new Date();const planningYear=now.getMonth()>=10?now.getFullYear()+1:now.getFullYear();
  calendarCursor=new Date((cat||type||['dated','annual'].includes(view))?planningYear:now.getFullYear(),0,1);
@@ -259,9 +263,9 @@ function setSelection(view='all',cat='',type=''){
 }
 function isBoothOpportunity(e){return e.type==='Booth'||['Yes - confirmed','Application needed'].includes(e.booth)||/\b(booth|vendor|exhibitor|marketplace)\b/i.test(e.note||'');}
 function matchesEventType(e){return !selectedType||(selectedType==='Booth'?isBoothOpportunity(e):e.type===selectedType)}
-function getFilteredEvents(){let q=$('search').value.trim().toLowerCase(),m=$('month').value,s=$('status').value;return publicEvents().filter(e=>(!q||[e.name,e.location,e.notes,e.contact,e.category,e.type].join(' ').toLowerCase().includes(q))&&(!selectedCat||e.category===selectedCat)&&matchesEventType(e)&&(!m||String(e.month)===m)&&(!s||e.status===s)&&(currentView!=='annual'||e.recurring==='yes')).sort((a,b)=>(Number(a.month)||13)-(Number(b.month)||13)||a.name.localeCompare(b.name))}
+function getFilteredEvents(){let q=$('search').value.trim().toLowerCase(),m=$('month').value,s=annualOnly?'':$('status').value;return publicEvents().filter(e=>(!q||[e.name,e.location,e.notes,e.contact,e.category,e.type].join(' ').toLowerCase().includes(q))&&(!selectedCat||e.category===selectedCat)&&matchesEventType(e)&&(!m||String(e.month)===m)&&(!s||e.status===s)&&(currentView!=='annual'||e.recurring==='yes')).sort((a,b)=>(Number(a.month)||13)-(Number(b.month)||13)||a.name.localeCompare(b.name))}
 function getFilteredLeads(){const q=$('search').value.trim().toLowerCase();return leads.filter(l=>(!selectedCat||l.category===selectedCat)&&(!q||[l.title,l.category,l.search].join(' ').toLowerCase().includes(q))&&(!selectedType||new RegExp(selectedType==='Community fair'?'fair|community':selectedType==='Celebration'?'celebrat|heritage|holiday':selectedType==='Booth'?'booth|vendor|exhibitor|marketplace':selectedType==='Other'?'event|gathering':selectedType,'i').test([l.title,l.search].join(' '))))}
-function render(){let filtered=getFilteredEvents(),lf=getFilteredLeads(),published=publicEvents();$('total').textContent=published.length;$('annual').textContent=published.filter(e=>e.recurring==='yes').length;$('approved').textContent=published.filter(e=>e.status==='Approved').length;$('pending').textContent=published.filter(e=>['Contacted','Awaiting approval'].includes(e.status)).length;$('count-all').textContent=published.length;$('count-annual').textContent=published.filter(e=>e.recurring==='yes').length;$('count-discovered').textContent=leads.length;$('count-removed').textContent=events.filter(e=>e.removedAt).length;document.querySelectorAll('[data-count]').forEach(x=>x.textContent=published.filter(e=>e.category===x.dataset.count).length+researchedEvents.filter(e=>e.category===x.dataset.count).length);
+function render(){let filtered=getFilteredEvents(),lf=getFilteredLeads(),published=publicEvents();$('total').textContent=published.length;$('annual').textContent=published.filter(e=>e.recurring==='yes').length+researchedEvents.length;$('approved').textContent=published.filter(e=>e.status==='Approved').length;$('pending').textContent=published.filter(e=>['Contacted','Awaiting approval'].includes(e.status)).length;$('count-all').textContent=published.length;$('count-annual').textContent=published.filter(e=>e.recurring==='yes').length+researchedEvents.length;$('count-discovered').textContent=leads.length;$('count-removed').textContent=events.filter(e=>e.removedAt).length;document.querySelectorAll('[data-count]').forEach(x=>x.textContent=published.filter(e=>e.category===x.dataset.count).length+researchedEvents.filter(e=>e.category===x.dataset.count).length);
  // Only one sidebar navigation choice may be selected at a time.
  const activeNav=[...document.querySelectorAll('.sidebar .nav')].find(b=>selectedCat?b.dataset.cat===selectedCat:selectedType?b.dataset.type===selectedType:annualOnly?b.dataset.view==='annual':b.dataset.view===currentView);
  document.querySelectorAll('.sidebar .nav').forEach(b=>{b.classList.remove('active');b.removeAttribute('aria-current');});
@@ -284,7 +288,7 @@ function render(){let filtered=getFilteredEvents(),lf=getFilteredLeads(),publish
  $('backup').classList.toggle('hidden',currentView!=='planning');
  $('exportTop').classList.toggle('hidden',currentView!=='planning');
  $('search').classList.toggle('hidden',['planning','finder','removed','upcoming'].includes(currentView));
- $('status').classList.toggle('hidden',['planning','finder','removed','upcoming'].includes(currentView));
+ $('status').classList.toggle('hidden',annualOnly||['planning','finder','removed','upcoming'].includes(currentView));
  document.querySelector('.toolbar').classList.toggle('hidden',['planning','finder','removed','upcoming'].includes(currentView));
  // Month is selected using the calendar arrows, not the directory month dropdown.
  $('month').classList.toggle('hidden',calendarOnly||discoveredOnly);
@@ -530,11 +534,11 @@ function renderEventList(){
  const year=calendarCursor.getFullYear(),panel=$('calendarPanel');
  panel.classList.add('hell-list-mode');
  panel.querySelector('.calendar-header h3').textContent='Events & dates';
- panel.querySelector('.calendar-header p').textContent='All events in one list. Confirmed, projected, and unconfirmed dates are labeled individually.';
+ panel.querySelector('.calendar-header p').textContent=annualOnly?'All annual events in one list. Confirmed, projected, and unconfirmed dates are labeled individually.':'All events in one list. Confirmed, projected, and unconfirmed dates are labeled individually.';
  $('calendarHeading').textContent=String(year);$('calToday').textContent='This year';
  $('calPrev').setAttribute('aria-label','Previous year');$('calNext').setAttribute('aria-label','Next year');
  $('calendarGrid').innerHTML='';$('calendarMonthOnly').innerHTML='';
- const query=$('search').value.trim().toLowerCase(),status=$('status').value;
+ const query=annualOnly?'':$('search').value.trim().toLowerCase(),status=annualOnly?'':$('status').value;
  const matching=publicEvents().filter(e=>(!annualOnly||e.recurring==='yes')&&(!selectedCat||e.category===selectedCat)&&matchesEventType(e)&&(!status||e.status===status)&&(!query||[e.name,e.location,e.notes,e.contact,e.category,e.type].join(' ').toLowerCase().includes(query)));
  const researchedMatching=researchedEvents.filter(e=>(!selectedCat||e.category===selectedCat)&&matchesEventType(e)&&(!query||[e.name,e.location,e.note,e.category,e.type].join(' ').toLowerCase().includes(query))&&!status);
  const researchedPicked=researchedMatching.map(r=>{
@@ -566,7 +570,7 @@ function renderEventList(){
     return `<div class="event-date-item"><span class="hell-year-date" style="background:${visual.bg};color:${visual.color}">${start?safe(new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric'}).format(start)):safe(months[m].slice(0,3))}</span><div class="hell-event-detail"><div class="hell-event-title">${visual.icon} ${safe(e.name)}</div><div class="hell-event-range">${safe(dateLabel)}</div><span class="hell-duration">${research&&research.name==='Downtown Summerlin Holiday Parade'&&start?'Season span: '+duration+' days (selected nights)':duration?duration+' '+(duration===1?'day':'days'):'Duration to confirm'}</span><span class="hell-type">${safe(e.type)} · ${safe(e.category)}</span><span class="tag ${kind==='projected'||kind==='unconfirmed'?'amber':''}">${safe(statusLabel)}</span><div class="hell-event-note">${safe(note)}${e.location?'<br>📍 '+safe(e.location):''}${e.status?'<br>Outreach: '+safe(e.status):''}</div><div class="actions">${research?'':'<button type="button" class="btn secondary small" data-event-list-edit="'+safe(e.id)+'">Edit event / dates</button>'}${eventSourceUI(link||detail,link?'View Source':'Historical Source')}${link&&detail&&link!==detail?eventSourceUI(detail,'Projection Evidence'):''}</div></div></div>`;
    }).join('')}</section>`;
  }).filter(Boolean).join('');
- $('calendarLeads').innerHTML=`<div class="hell-year-overview"><div class="event-list-notice">All event dates appear together. <strong>Confirmed</strong> means an organizer-published schedule for the selected year; <strong>Date entered</strong> is saved by you and still needs verification. <strong>Projected</strong> and <strong>Unconfirmed</strong> dates require research. News leads remain in <strong>Discovered leads</strong> until reviewed. Booth and flyer permissions must be confirmed separately.</div>${groups?'<div class="hell-year-list">'+groups+'</div>':'<div class="event-date-empty">No events match this category for '+year+'. Select another category or use Planning to add an event.</div>'}</div>`;
+ $('calendarLeads').innerHTML=`<div class="hell-year-overview"><div class="event-list-notice">${annualOnly?'Showing all recurring annual events, including older documented editions awaiting next-year verification.':'All event dates appear together.'} <strong>Confirmed</strong> means an organizer-published schedule for the selected year; <strong>Date entered</strong> is saved by you and still needs verification. <strong>Projected</strong> and <strong>Unconfirmed</strong> dates require research. News leads remain in <strong>Discovered leads</strong> until reviewed. Booth and flyer permissions must be confirmed separately.</div>${groups?'<div class="hell-year-list">'+groups+'</div>':'<div class="event-date-empty">No events match this category for '+year+'. Select another category or use Planning to add an event.</div>'}</div>`;
 }
 function renderCalendar(){
  if(currentView==='holidays'){
