@@ -152,13 +152,29 @@
 
 .finder-small{font-size:12px;color:#607783;line-height:1.6;margin-top:15px}
 @media(max-width:720px){.finder-ways{grid-template-columns:1fr}}
+
+/* Rolling three-month preview — Hell Days-style cards */
+.upcoming-top{appearance:none;border:1px solid #e8c36a;background:#e3bd6f;color:#263a61;border-radius:10px;font-size:13px;font-weight:850;padding:10px 15px;cursor:pointer;white-space:nowrap}
+.upcoming-top:hover{background:#f2d393}.upcoming-top:focus-visible{outline:3px solid #9dd1cb;outline-offset:2px}
+.upcoming-intro{background:#eff9f7;border:1px solid #c8e3df;border-radius:12px;padding:13px 15px;font-size:12px;color:#466474;line-height:1.6;margin:12px 0 16px}
+.upcoming-months{display:grid;grid-template-columns:1fr;gap:17px}
+.upcoming-month{background:#fff;border:1px solid #cbdedb;border-radius:15px;overflow:hidden}
+.upcoming-month-header{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#e5f2f0;border-bottom:2px solid #b98d42;padding:14px 17px}
+.upcoming-month-header h3{margin:0;color:#263a61;font-size:19px}.upcoming-month-header span{color:#55717a;font-size:12px;font-weight:700}
+.upcoming-rows{padding:4px 17px}.upcoming-row{display:flex;align-items:flex-start;gap:13px;padding:14px 0;border-bottom:1px solid #edf2f0}.upcoming-row:last-child{border-bottom:0}
+.upcoming-date{min-width:72px;max-width:76px;padding:9px 5px;border-radius:9px;background:#e9f3f3;color:#263a61;font-weight:850;text-align:center;font-size:11px;line-height:1.45}
+.upcoming-detail{flex:1;min-width:0}.upcoming-title{font-size:15px;line-height:1.4;font-weight:800;color:#263a61}.upcoming-when{font-size:12px;font-weight:700;color:#0d7b75;margin:5px 0}.upcoming-meta{font-size:11px;line-height:1.65;color:#607886;margin-top:7px;overflow-wrap:anywhere}
+.upcoming-tag{display:inline-block;border-radius:40px;padding:4px 9px;margin:4px 5px 0 0;background:#e2f1e9;color:#22644b;font-size:10px;font-weight:800}
+.upcoming-tag.projected{background:#fff0d2;color:#755116}.upcoming-tag.unknown{background:#ede9f5;color:#655580}
+.upcoming-links{margin-top:7px;font-size:12px}.upcoming-empty{padding:16px 17px;color:#68818b;font-size:12px}
+@media(max-width:760px){.upcoming-top{padding:9px 10px;font-size:11px}.upcoming-month-header h3{font-size:16px}.upcoming-row{gap:9px}.upcoming-date{min-width:56px;max-width:56px}.top{flex-wrap:wrap}}
 </style>
 </head>
 <body>
-<header class="top"><div class="brand"><div class="brandmark"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h1>Vegas Outreach Hub</h1><p>Annual heritage events • parades • Southern Nevada outreach</p></div></div><span class="top-badge">Community outreach planner</span></header>
+<header class="top"><div class="brand"><div class="brandmark"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h1>Vegas Outreach Hub</h1><p>Annual heritage events • parades • Southern Nevada outreach</p></div></div><button type="button" class="upcoming-top" id="upcomingTop">📆 Upcoming Events · 3 months</button></header>
 <div class="layout">
 <aside class="sidebar" aria-label="Event categories">
-<div class="side-heading">Explore</div><div class="side-group" id="views"><button class="nav active" data-view="all"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span class="nav-label">All events</span><span class="count" id="count-all">0</span></button><button class="nav" data-view="discovered"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15A9 9 0 1 1 9 3.5"/><path d="M16 4l-4 8"/><circle cx="12" cy="12" r="2"/><path d="M15 2h7v7"/></svg><span class="nav-label">Discovered leads</span><span class="count" id="count-discovered">0</span></button><button class="nav" data-view="dated"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18m-12 6 2 2 4-5"/></svg><span class="nav-label">Event dates</span></button><button class="nav" data-view="annual"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01"/></svg><span class="nav-label">Annual events</span><span class="count" id="count-annual">0</span></button><button class="nav" data-view="holidays"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M12 18s-4-2.6-4-4.6a2.2 2.2 0 0 1 4-1.1 2.2 2.2 0 0 1 4 1.1c0 2-4 4.6-4 4.6Z"/></svg><span class="nav-label">Hell Days</span><span class="count">📅</span></button></div>
+<div class="side-heading">Explore</div><div class="side-group" id="views"><button class="nav" data-view="upcoming"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M8 15l2 2 5-5"/></svg><span class="nav-label">Upcoming Events</span><span class="count">3 mo</span></button><button class="nav" data-view="discovered"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15A9 9 0 1 1 9 3.5"/><path d="M16 4l-4 8"/><circle cx="12" cy="12" r="2"/><path d="M15 2h7v7"/></svg><span class="nav-label">Discovered leads</span><span class="count" id="count-discovered">0</span></button><button class="nav" data-view="dated"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18m-12 6 2 2 4-5"/></svg><span class="nav-label">Event dates</span></button><button class="nav" data-view="annual"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01"/></svg><span class="nav-label">Annual events</span><span class="count" id="count-annual">0</span></button><button class="nav active" data-view="all"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span class="nav-label">All events</span><span class="count" id="count-all">0</span></button><button class="nav" data-view="holidays"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M12 18s-4-2.6-4-4.6a2.2 2.2 0 0 1 4-1.1 2.2 2.2 0 0 1 4 1.1c0 2-4 4.6-4 4.6Z"/></svg><span class="nav-label">Hell Days</span><span class="count">📅</span></button></div>
 <div class="divider"></div><div class="side-heading">Heritage categories</div><div class="side-group" id="heritage"><button class="nav" data-cat="Black / African American"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="nav-label">Black / African American</span><span class="count" data-count="Black / African American">0</span></button><button class="nav" data-cat="Hispanic / Latino"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg><span class="nav-label">Hispanic / Latino</span><span class="count" data-count="Hispanic / Latino">0</span></button><button class="nav" data-cat="Native American / Indigenous"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4c-9 0-16 3-16 11a5 5 0 0 0 5 5c8 0 11-7 11-16Z"/><path d="M4 20c3-5 7-8 12-11"/></svg><span class="nav-label">Native American / Indigenous</span><span class="count" data-count="Native American / Indigenous">0</span></button><button class="nav" data-cat="Multicultural / General"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 12 4-4 4 2 3-2 4 2 3-2 2 4-8 8-4-2-2 1-4-4-2-3Z"/><path d="m8 13 6 5M11 10l7 6"/></svg><span class="nav-label">Multicultural / General</span><span class="count" data-count="Multicultural / General">0</span></button></div>
 <div class="divider"></div><div class="side-heading">Event types</div><div class="side-group" id="types"><button class="nav" data-type="Parade"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 22V4m0 1c5-4 9 4 16 0v11c-7 4-11-4-16 0"/></svg><span class="nav-label">Parades</span></button><button class="nav" data-type="Festival"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 20 8-3-5-5-3 8Z"/><path d="M12 12l2-2M16 8l1-1M12 4l.5-2M19 13h3"/><circle cx="19" cy="4" r="1"/><path d="M5 6l3 2"/></svg><span class="nav-label">Festivals</span></button><button class="nav" data-type="Booth"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10h18l-2-6H5l-2 6Z"/><path d="M5 10v11h14V10M9 21v-7h6v7"/><path d="M3 10h18"/></svg><span class="nav-label">Booths</span></button><button class="nav" data-view="finder"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5M8 10.5h5m-2.5-2.5v5"/></svg><span class="nav-label">Event Finder</span></button></div>
 <div class="divider"></div><div class="side-heading">Planning</div><div class="side-group"><button class="nav" data-view="planning"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span class="nav-label">Planning</span></button><button class="nav" data-view="removed"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 10v7M14 10v7"/></svg><span class="nav-label">Removed Events</span><span class="count" id="count-removed">0</span></button><button class="nav" id="jumpBackup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3h14l3 3v15H3V3h1ZM7 3v7h10V3M7 21v-8h10v8"/></svg><span class="nav-label">Backup & restore</span></button></div><p class="side-foot">Select any category to see dated, projected, and unconfirmed events together. Event Finder imports public event links or flyer photos for review. Planning is for manual event editing. Hell Days shows recurring holidays.</p>
@@ -167,6 +183,10 @@
 <div class="stats" id="dashboardStats"><div class="stat"><strong id="total">0</strong><span>Tracked events</span></div><div class="stat"><strong id="annual">0</strong><span>Annual events</span></div><div class="stat"><strong id="approved">0</strong><span>Approved outreach</span></div><div class="stat"><strong id="pending">0</strong><span>Need follow-up</span></div></div>
 <div class="notice" id="dashboardNotice">Starter entries are planning leads, not verified schedules. Confirm event dates, organizer details, booth rules and flyer permissions. Your added events are stored in this browser only—export a backup regularly.</div>
 <div class="toolbar"><input id="search" placeholder="Search events, city, organizer, notes…" aria-label="Search events"><select id="month"><option value="">All months</option></select><select id="status"><option value="">All outreach statuses</option><option>Researching</option><option>Contacted</option><option>Awaiting approval</option><option>Approved</option><option>Completed</option><option>Not permitted</option></select></div>
+<section id="upcomingPanel" class="panel hidden" aria-label="Upcoming events for the next three months">
+ <div class="upcoming-intro"><strong>Rolling three-month outlook:</strong> Current month and the next two months, updated when you open the site or a new month starts. Organizer-confirmed schedules, dates you entered, historical projections, and month-only reminders are clearly distinguished. <strong>Projected dates are not verified.</strong> Unconfirmed Event Finder drafts and removed events are excluded.</div>
+ <div id="upcomingMonths" class="upcoming-months" aria-live="polite"></div>
+ </section>
 <section id="calendarPanel" class="panel calendar-panel hidden" aria-label="Event date listings">
   <div class="calendar-header"><div><h3>Event dates</h3><p class="muted">See confirmed schedules, projected dates, and events needing research together, with clear labels.</p></div><div class="calendar-controls"><button class="btn secondary small" type="button" id="calPrev" aria-label="Previous year">‹</button><strong id="calendarHeading" aria-live="polite"></strong><button class="btn secondary small" type="button" id="calNext" aria-label="Next year">›</button><button class="btn secondary small" type="button" id="calToday">Today</button></div></div>
   <div id="calendarSummary" class="cal-summary"></div><div class="cal-legend" aria-label="Event category colors"><span><i style="--legend:#8B6EAF"></i>Black heritage</span><span><i style="--legend:#0F8E86"></i>Hispanic / Latino</span><span><i style="--legend:#B98D42"></i>Native American</span><span><i style="--legend:#5079A9"></i>Multicultural</span></div>
@@ -232,13 +252,15 @@ function render(){let filtered=getFilteredEvents(),lf=getFilteredLeads(),publish
  const activeNav=[...document.querySelectorAll('.sidebar .nav')].find(b=>selectedCat?b.dataset.cat===selectedCat:selectedType?b.dataset.type===selectedType:annualOnly?b.dataset.view==='annual':b.dataset.view===currentView);
  document.querySelectorAll('.sidebar .nav').forEach(b=>{b.classList.remove('active');b.removeAttribute('aria-current');});
  if(activeNav){activeNav.classList.add('active');activeNav.setAttribute('aria-current','page');}
- let heading=selectedCat|| (selectedType?selectedType==='Parade'?'Parades':selectedType==='Booth'?'Booths':selectedType+'s':currentView==='discovered'?'Discovered event leads':currentView==='holidays'?'Hell Days':annualOnly?'Annual events':currentView==='dated'?'Event dates':currentView==='planning'?'Planning':currentView==='finder'?'Event Finder':'All events');$('pageTitle').textContent=heading;$('pageDesc').textContent=currentView==='removed'?'Restore events previously removed from this browser.':currentView==='finder'?'Import an event from a flyer image or public event page, then review before saving.':currentView==='planning'?'Add or edit outreach events and manage your backups here.':currentView==='discovered'?'Automatically collected news results requiring review and confirmation.':currentView==='holidays'?'Recurring holidays, possible work closures, and observances. Bank and school schedules must be confirmed individually.':currentView==='dated'?(selectedType==='Booth'?'Events with booth or vendor-related opportunities to research. Availability and permission are not guaranteed.':'Browse all events together. Each listing shows whether its date is confirmed, projected, or unconfirmed.'):'Browse all saved events and outreach planning information.';
+ let heading=selectedCat|| (selectedType?selectedType==='Parade'?'Parades':selectedType==='Booth'?'Booths':selectedType+'s':currentView==='upcoming'?'Upcoming Events':currentView==='discovered'?'Discovered event leads':currentView==='holidays'?'Hell Days':annualOnly?'Annual events':currentView==='dated'?'Event dates':currentView==='planning'?'Planning':currentView==='finder'?'Event Finder':'All events');$('pageTitle').textContent=heading;$('pageDesc').textContent=currentView==='removed'?'Restore events previously removed from this browser.':currentView==='finder'?'Import an event from a flyer image or public event page, then review before saving.':currentView==='planning'?'Add or edit outreach events and manage your backups here.':currentView==='upcoming'?'This month and the next two months, with verified and projected dates clearly labeled.':currentView==='discovered'?'Automatically collected news results requiring review and confirmation.':currentView==='holidays'?'Recurring holidays, possible work closures, and observances. Bank and school schedules must be confirmed individually.':currentView==='dated'?(selectedType==='Booth'?'Events with booth or vendor-related opportunities to research. Availability and permission are not guaranteed.':'Browse all events together. Each listing shows whether its date is confirmed, projected, or unconfirmed.'):'Browse all saved events and outreach planning information.';
  const discoveredOnly=currentView==='discovered',calendarOnly=['dated','holidays'].includes(currentView),showDashboard=currentView==='all';
  $('dashboardStats').classList.toggle('hidden',!showDashboard);
  $('dashboardNotice').classList.toggle('hidden',!showDashboard);
  $('directoryTitle').classList.toggle('hidden',!showDashboard);
  $('cards').classList.toggle('hidden',!showDashboard);
  $('calendarPanel').classList.toggle('hidden',!calendarOnly);
+ $('upcomingPanel').classList.toggle('hidden',currentView!=='upcoming');
+ if(currentView==='upcoming')renderUpcoming();
  $('leadPanel').classList.toggle('hidden',!discoveredOnly);
  $('finderPanel').classList.toggle('hidden',currentView!=='finder');
  $('removedPanel').classList.toggle('hidden',currentView!=='removed');
@@ -247,9 +269,9 @@ function render(){let filtered=getFilteredEvents(),lf=getFilteredLeads(),publish
  $('editor').classList.toggle('hidden',currentView!=='planning');
  $('backup').classList.toggle('hidden',currentView!=='planning');
  $('exportTop').classList.toggle('hidden',currentView!=='planning');
- $('search').classList.toggle('hidden',currentView==='planning'||currentView==='finder'||currentView==='removed');
- $('status').classList.toggle('hidden',currentView==='planning'||currentView==='finder'||currentView==='removed');
- document.querySelector('.toolbar').classList.toggle('hidden',currentView==='planning'||currentView==='finder'||currentView==='removed');
+ $('search').classList.toggle('hidden',['planning','finder','removed','upcoming'].includes(currentView));
+ $('status').classList.toggle('hidden',['planning','finder','removed','upcoming'].includes(currentView));
+ document.querySelector('.toolbar').classList.toggle('hidden',['planning','finder','removed','upcoming'].includes(currentView));
  // Month is selected using the calendar arrows, not the directory month dropdown.
  $('month').classList.toggle('hidden',calendarOnly||discoveredOnly);
  $('month').setAttribute('aria-hidden',String(calendarOnly||discoveredOnly));
@@ -433,6 +455,63 @@ function eventListDates(e,year){
  const first=new Date(year,0,1),last=new Date(year,11,31);
  return a<=last&&end>=first?{start:a,end:end<a?a:end}:null;
 }
+
+/* Rolling preview. It never turns historic or calculated dates into confirmed dates. */
+let upcomingRenderedMonth='';
+function renderUpcoming(){
+ const today=new Date(),todayDay=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+ upcomingRenderedMonth=today.getFullYear()+'-'+today.getMonth();
+ const fmt=new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'});
+ const windows=Array.from({length:3},(_,i)=>new Date(today.getFullYear(),today.getMonth()+i,1));
+ const output=windows.map(monthStart=>{
+  const yy=monthStart.getFullYear(),mm=monthStart.getMonth(),monthEnd=new Date(yy,mm+1,0);
+  const records=[];
+  for(const e of publicEvents()){
+   const entered=parseLocalDate(e.date),last=parseLocalDate(e.endDate)||entered;
+   let start=null,end=null,kind='',reason='';
+   if(entered&&last>=monthStart&&entered<=monthEnd&&last>=todayDay){start=entered;end=last;kind='entered';}
+   else if(e.recurring==='yes'){
+    const projected=projectionFor(e,yy);
+    if(projected&&projected.end>=monthStart&&projected.start<=monthEnd&&projected.end>=todayDay){start=projected.start;end=projected.end;kind='projected';reason=projected.reason||'Recurring date estimate';}
+    else if(!entered&&Number(e.month)===mm+1){kind='unknown';reason='Recurring annual event; exact date is unconfirmed';}
+   } else if(!entered&&Number(e.month)===mm+1){kind='unknown';reason='Event month recorded; date not confirmed';}
+   if(kind)records.push({e,start,end,kind,reason,sort:start?start.getTime():Infinity});
+  }
+  for(const e of researchedEvents){
+   const prior=parseLocalDate(e.start),priorEnd=parseLocalDate(e.end)||prior;
+   if(!prior)continue;
+   let start=null,end=null,kind='',reason='';
+   if(e.verifiedYear===yy){start=prior;end=priorEnd;kind='confirmed';}
+   else {
+    // Same month/day is a research aid only, never a confirmed annual occurrence.
+    const projectedStart=new Date(yy,prior.getMonth(),Math.min(prior.getDate(),new Date(yy,prior.getMonth()+1,0).getDate()));
+    const span=Math.max(0,Math.round((Date.UTC(priorEnd.getFullYear(),priorEnd.getMonth(),priorEnd.getDate())-Date.UTC(prior.getFullYear(),prior.getMonth(),prior.getDate()))/86400000));
+    start=projectedStart;end=new Date(yy,projectedStart.getMonth(),projectedStart.getDate()+span);
+    kind='projected';reason='Estimated using the '+e.verifiedYear+' edition; new schedule not announced';
+   }
+   if(end<monthStart||start>monthEnd||end<todayDay)continue;
+   records.push({e,start,end,kind,reason,sort:start.getTime()});
+  }
+  records.sort((a,b)=>a.sort-b.sort||a.e.name.localeCompare(b.e.name));
+  const title=new Intl.DateTimeFormat('en-US',{month:'long',year:'numeric'}).format(monthStart);
+  return `<section class="upcoming-month"><div class="upcoming-month-header"><h3>${safe(title)}</h3><span>${records.length} event${records.length===1?'':'s'}</span></div><div class="upcoming-rows">${records.length?records.map(v=>{
+   const e=v.e,{start,end,kind,reason}=v,vis=eventVisual(e);
+   const span=start&&end?Math.max(1,Math.round((Date.UTC(end.getFullYear(),end.getMonth(),end.getDate())-Date.UTC(start.getFullYear(),start.getMonth(),start.getDate()))/86400000)+1):null;
+   const when=start?fmt.format(start)+(end&&dateKey(start)!==dateKey(end)?' – '+fmt.format(end):''):'Date to be announced';
+   const label=kind==='confirmed'?'Organizer-confirmed':kind==='entered'?'Date entered · verify':kind==='projected'?'Projected · verify':'Unconfirmed';
+   const url=safeUrl(e.url),isLocal=!e.readOnly&&!String(e.id||'').startsWith('research-');
+   return `<div class="upcoming-row"><span class="upcoming-date" style="background:${vis.bg};color:${vis.color}">${start?safe(new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric'}).format(start)):'TBD'}</span><div class="upcoming-detail"><div class="upcoming-title">${vis.icon} ${safe(e.name)}</div><div class="upcoming-when">${safe(when)}</div><span class="upcoming-tag ${kind==='projected'?'projected':kind==='unknown'?'unknown':''}">${safe(label)}</span><span class="hell-duration">${span?span+' '+(span===1?'day':'days'):'Duration TBD'}</span><div class="upcoming-meta">${safe(e.category||'Multicultural / General')} · ${safe(e.type||'Event')}${e.location?'<br>📍 '+safe(e.location):''}${reason?'<br>'+safe(reason):''}</div><div class="upcoming-links">${url?'<a href="'+safe(url)+'" target="_blank" rel="noopener noreferrer">Research event source ↗</a>':''}${isLocal?' <button class="btn secondary small" type="button" data-upcoming-edit="'+safe(e.id)+'">Edit in Planning</button>':''}</div></div></div>`;
+  }).join(''):'<p class="upcoming-empty">No upcoming events are listed for this month yet.</p>'}</div></section>`;
+ });
+ $('upcomingMonths').innerHTML=output.join('');
+}
+$('upcomingMonths').addEventListener('click',event=>{const b=event.target.closest('[data-upcoming-edit]');if(b)editEvent(b.dataset.upcomingEdit)});
+$('upcomingTop').addEventListener('click',()=>setSelection('upcoming'));
+// Keep the three-month window rolling while a long-lived browser tab remains open.
+function updateUpcomingWhenMonthChanges(){const now=new Date();if(upcomingRenderedMonth!==now.getFullYear()+'-'+now.getMonth() && currentView==='upcoming')renderUpcoming();}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateUpcomingWhenMonthChanges()});
+setInterval(updateUpcomingWhenMonthChanges,30*60*1000);
+
 function renderEventList(){
  const year=calendarCursor.getFullYear(),panel=$('calendarPanel');
  panel.classList.add('hell-list-mode');
