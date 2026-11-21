@@ -59,16 +59,26 @@
 .cal-month-chip small{font-size:10px;font-weight:650;color:#4d5e70}
 .cal-month-chip:hover,.cal-month-chip:focus-visible{outline:2px solid #b98d42;outline-offset:1px}
 @media(max-width:760px){.cal-month-reminder-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Holidays and closures — calendar-only, calculated every year */
+.cal-event-chip.holiday-federal{background:#e6f2ff!important;border-left-color:#456ca8!important;color:#243e68}
+.cal-event-chip.holiday-observance{background:#f5eafa!important;border-left-color:#8c62b4!important;color:#52396e}
+.cal-event-chip.holiday-state{background:#fff0d5!important;border-left-color:#b98d42!important;color:#66491e}
+.holiday-explainer{border-left:4px solid #b98d42;background:#fff8ea;color:#56462e;padding:12px 14px;border-radius:8px;line-height:1.6;font-size:12px;margin:12px 0}
+.holiday-info-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px;margin-top:10px}
+.holiday-info{border:1px solid #cbdedb;background:#f8fcfb;border-radius:10px;padding:12px;scroll-margin-top:20px}
+.holiday-info strong{color:#263a61;font-size:13px}.holiday-info p{font-size:12px;color:#546b7b;line-height:1.5;margin:6px 0 0}
+.holiday-info .holiday-kind{font-size:10px;color:#806127;font-weight:800;margin-top:6px}
+.holiday-info:target{outline:3px solid #b98d42}
 </style>
 </head>
 <body>
 <header class="top"><div class="brand"><div class="brandmark"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h1>Vegas Outreach Hub</h1><p>Annual heritage events • parades • Southern Nevada outreach</p></div></div><span class="top-badge">Community outreach planner</span></header>
 <div class="layout">
 <aside class="sidebar" aria-label="Event categories">
-<div class="side-heading">Explore</div><div class="side-group" id="views"><button class="nav active" data-view="all"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span class="nav-label">All events</span><span class="count" id="count-all">0</span></button><button class="nav" data-view="discovered"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15A9 9 0 1 1 9 3.5"/><path d="M16 4l-4 8"/><circle cx="12" cy="12" r="2"/><path d="M15 2h7v7"/></svg><span class="nav-label">Discovered leads</span><span class="count" id="count-discovered">0</span></button><button class="nav" data-view="calendar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01"/></svg><span class="nav-label">Event calendar</span></button><button class="nav" data-view="annual"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01"/></svg><span class="nav-label">Annual events</span><span class="count" id="count-annual">0</span></button></div>
+<div class="side-heading">Explore</div><div class="side-group" id="views"><button class="nav active" data-view="all"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span class="nav-label">All events</span><span class="count" id="count-all">0</span></button><button class="nav" data-view="discovered"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15A9 9 0 1 1 9 3.5"/><path d="M16 4l-4 8"/><circle cx="12" cy="12" r="2"/><path d="M15 2h7v7"/></svg><span class="nav-label">Discovered leads</span><span class="count" id="count-discovered">0</span></button><button class="nav" data-view="calendar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01"/></svg><span class="nav-label">Event calendar</span></button><button class="nav" data-view="annual"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01"/></svg><span class="nav-label">Annual events</span><span class="count" id="count-annual">0</span></button><button class="nav" data-view="holidays"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M12 18s-4-2.6-4-4.6a2.2 2.2 0 0 1 4-1.1 2.2 2.2 0 0 1 4 1.1c0 2-4 4.6-4 4.6Z"/></svg><span class="nav-label">Hell Days</span><span class="count">📅</span></button></div>
 <div class="divider"></div><div class="side-heading">Heritage categories</div><div class="side-group" id="heritage"><button class="nav" data-cat="Black / African American"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="nav-label">Black / African American</span><span class="count" data-count="Black / African American">0</span></button><button class="nav" data-cat="Hispanic / Latino"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg><span class="nav-label">Hispanic / Latino</span><span class="count" data-count="Hispanic / Latino">0</span></button><button class="nav" data-cat="Native American / Indigenous"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4c-9 0-16 3-16 11a5 5 0 0 0 5 5c8 0 11-7 11-16Z"/><path d="M4 20c3-5 7-8 12-11"/></svg><span class="nav-label">Native American / Indigenous</span><span class="count" data-count="Native American / Indigenous">0</span></button><button class="nav" data-cat="Multicultural / General"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 12 4-4 4 2 3-2 4 2 3-2 2 4-8 8-4-2-2 1-4-4-2-3Z"/><path d="m8 13 6 5M11 10l7 6"/></svg><span class="nav-label">Multicultural / General</span><span class="count" data-count="Multicultural / General">0</span></button></div>
 <div class="divider"></div><div class="side-heading">Event types</div><div class="side-group" id="types"><button class="nav" data-type="Parade"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 22V4m0 1c5-4 9 4 16 0v11c-7 4-11-4-16 0"/></svg><span class="nav-label">Parades</span></button><button class="nav" data-type="Festival"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 20 8-3-5-5-3 8Z"/><path d="M12 12l2-2M16 8l1-1M12 4l.5-2M19 13h3"/><circle cx="19" cy="4" r="1"/><path d="M5 6l3 2"/></svg><span class="nav-label">Festivals</span></button><button class="nav" data-type="Celebration"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M12 19s-4-2.5-4-4.5a2 2 0 0 1 4-1 2 2 0 0 1 4 1c0 2-4 4.5-4 4.5Z"/></svg><span class="nav-label">Celebrations</span></button><button class="nav" data-type="Community fair"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v11H3Z"/><path d="M9 21v-8h6v8"/></svg><span class="nav-label">Community fairs</span></button><button class="nav" data-type="Market"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10h18l-2-6H5l-2 6ZM5 10v11h14V10M9 21v-7h6v7"/></svg><span class="nav-label">Markets</span></button><button class="nav" data-type="Other"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 3 8 11m-3 8 6-6m-2-9 11 11-4 3L5 7l4-3Z"/></svg><span class="nav-label">Other events</span></button></div>
-<div class="divider"></div><div class="side-heading">Planning</div><div class="side-group"><button class="nav" id="jumpEditor"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span class="nav-label">Add an event</span></button><button class="nav" id="jumpBackup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3h14l3 3v15H3V3h1ZM7 3v7h10V3M7 21v-8h10v8"/></svg><span class="nav-label">Backup & restore</span></button></div><p class="side-foot">Select a category to open its calendar. Discovered news results are unverified leads, not confirmed schedules.</p>
+<div class="divider"></div><div class="side-heading">Planning</div><div class="side-group"><button class="nav" id="jumpEditor"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span class="nav-label">Add an event</span></button><button class="nav" id="jumpBackup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3h14l3 3v15H3V3h1ZM7 3v7h10V3M7 21v-8h10v8"/></svg><span class="nav-label">Backup & restore</span></button></div><p class="side-foot">Select a category to open its calendar. Hell Days provides recurring dates; confirm each employer or school district’s actual days off.</p>
 </aside>
 <main class="content"><div class="pagehead"><div><div class="eyebrow">OUTREACH DASHBOARD</div><h2 id="pageTitle">All events</h2><p id="pageDesc" class="muted">Browse local cultural gatherings and plan outreach for the year.</p></div><div class="top-actions"><button class="btn" id="addTop">+ Add event</button><button class="btn secondary" id="exportTop">Export backup</button></div></div>
 <div class="stats" id="dashboardStats"><div class="stat"><strong id="total">0</strong><span>Tracked events</span></div><div class="stat"><strong id="annual">0</strong><span>Annual events</span></div><div class="stat"><strong id="approved">0</strong><span>Approved outreach</span></div><div class="stat"><strong id="pending">0</strong><span>Need follow-up</span></div></div>
@@ -100,6 +110,7 @@ function setSelection(view='all',cat='',type=''){
  currentView=(cat||type||annualOnly)?'calendar':view;
  selectedCat=cat;selectedType=type;
  $('month').value='';
+ if(currentView==='holidays'){const now=new Date();calendarCursor=new Date(now.getFullYear(),now.getMonth(),1)}
  if(currentView==='calendar'){
   const eligible=events.filter(e=>(!cat||e.category===cat)&&(!type||e.type===type)&&(view!=='annual'||e.recurring==='yes'));
   const now=new Date(),currentMonth=now.getMonth()+1;
@@ -117,8 +128,8 @@ function render(){let filtered=getFilteredEvents(),lf=getFilteredLeads();$('tota
  const activeNav=[...document.querySelectorAll('.sidebar .nav')].find(b=>selectedCat?b.dataset.cat===selectedCat:selectedType?b.dataset.type===selectedType:annualOnly?b.dataset.view==='annual':b.dataset.view===currentView);
  document.querySelectorAll('.sidebar .nav').forEach(b=>{b.classList.remove('active');b.removeAttribute('aria-current');});
  if(activeNav){activeNav.classList.add('active');activeNav.setAttribute('aria-current','page');}
- let heading=selectedCat|| (selectedType?selectedType==='Parade'?'Parades':selectedType==='Community fair'?'Community fairs':selectedType+'s':currentView==='discovered'?'Discovered event leads':annualOnly?'Annual events':currentView==='calendar'?'Event calendar':'All events');$('pageTitle').textContent=heading;$('pageDesc').textContent=currentView==='discovered'?'Automatically collected news results requiring review and confirmation.':currentView==='calendar'?'Calendar filtered to this selection. Confirmed dates appear on their exact day; undated annual events are displayed inside the calendar as month-only events.':'Browse all saved events and outreach planning information.';
- const discoveredOnly=currentView==='discovered',calendarOnly=currentView==='calendar',showDashboard=currentView==='all';
+ let heading=selectedCat|| (selectedType?selectedType==='Parade'?'Parades':selectedType==='Community fair'?'Community fairs':selectedType+'s':currentView==='discovered'?'Discovered event leads':currentView==='holidays'?'Hell Days':annualOnly?'Annual events':currentView==='calendar'?'Event calendar':'All events');$('pageTitle').textContent=heading;$('pageDesc').textContent=currentView==='discovered'?'Automatically collected news results requiring review and confirmation.':currentView==='holidays'?'Recurring holidays, possible work closures, and observances. Bank and school schedules must be confirmed individually.':currentView==='calendar'?'Calendar filtered to this selection. Confirmed dates appear on their exact day; undated annual events are displayed inside the calendar as month-only events.':'Browse all saved events and outreach planning information.';
+ const discoveredOnly=currentView==='discovered',calendarOnly=currentView==='calendar'||currentView==='holidays',showDashboard=currentView==='all';
  $('dashboardStats').classList.toggle('hidden',!showDashboard);
  $('dashboardNotice').classList.toggle('hidden',!showDashboard);
  $('directoryTitle').classList.toggle('hidden',!showDashboard);
@@ -168,8 +179,73 @@ function projectionFor(e,y){
  }
  return a?{start:a,end:b||a,reason,source,estimated:true,planningWindow:!!b}:null;
 }
+
+// Holidays are generated fresh for the selected calendar year and never change saved outreach records.
+// Closure descriptions are guidance only, not a promise about a particular school, bank, or employer.
+function lastWeekday(y,m,weekday){const d=new Date(y,m,0);return new Date(y,m-1,d.getDate()-(d.getDay()-weekday+7)%7)}
+function easterSunday(y){ // Gregorian computus
+ const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k+7)%7,m=Math.floor((a+11*h+22*l)/451),mm=Math.floor((h+l-7*m+114)/31),dd=(h+l-7*m+114)%31+1;
+ return new Date(y,mm-1,dd);
+}
+function observedFederalDate(date){const d=new Date(date);if(d.getDay()===6)d.setDate(d.getDate()-1);else if(d.getDay()===0)d.setDate(d.getDate()+1);return d}
+function holidaysForYear(year){
+ const list=[];
+ function add(name,date,icon,kind,note){list.push({id:'holiday-'+year+'-'+list.length,name,date,icon,kind,note})}
+ const federalNote='Federal holiday. Many banks and government offices close; school district and employer calendars differ. Verify locally.';
+ const observanceNote='Cultural or social observance, not an automatic bank or school closure.';
+ function federal(name,date,icon){add(name,date,icon,'federal',federalNote);const observed=observedFederalDate(date);if(dateKey(observed)!==dateKey(date))add(name+' (federal observed date)',observed,'🏦','federal','Observed workday used by many federal offices. Banks may observe weekend holidays differently; confirm bank and school schedules.');}
+ federal("New Year's Day",new Date(year,0,1),'🎆');
+ federal('Martin Luther King Jr. Day',nthWeekday(year,1,1,3),'✊');
+ add("Valentine’s Day",new Date(year,1,14),'💝','observance',observanceNote);
+ federal("Washington’s Birthday / Presidents’ Day",nthWeekday(year,2,1,3),'🏛️');
+ add('Easter Sunday',easterSunday(year),'🌷','observance','Religious observance. Some organizations adjust hours or have school breaks nearby; exact dates off vary.');
+ add("Mother’s Day",nthWeekday(year,5,0,2),'💐','observance',observanceNote);
+ federal('Memorial Day',lastWeekday(year,5,1),'🇺🇸');
+ federal('Juneteenth National Independence Day',new Date(year,5,19),'🎉');
+ add("Father’s Day",nthWeekday(year,6,0,3),'👔','observance',observanceNote);
+ federal('Independence Day',new Date(year,6,4),'🎆');
+ federal('Labor Day',nthWeekday(year,9,1,1),'🛠️');
+ federal('Columbus Day / Indigenous Peoples’ Day',nthWeekday(year,10,1,2),'🗓️');
+ const nvDay=lastWeekday(year,10,5);
+ add('Nevada Day (observed)',nvDay,'⭐','state','Nevada state holiday, observed on the last Friday of October. Government and school closures vary by agency or district; confirm locally.');
+ add('Halloween',new Date(year,9,31),'🎃','observance',observanceNote);
+ federal('Veterans Day',new Date(year,10,11),'🎖️');
+ federal('Thanksgiving Day',nthWeekday(year,11,4,4),'🦃');
+ const afterThanksgiving=nthWeekday(year,11,4,4);afterThanksgiving.setDate(afterThanksgiving.getDate()+1);
+ add('Day after Thanksgiving',afterThanksgiving,'🍂','state','Often a school or workplace break, but not a universal bank closure. Check the specific calendar.');
+ add('Christmas Eve',new Date(year,11,24),'🎄','observance','Some offices close early or for the day; not a universal bank or school holiday.');
+ federal('Christmas Day',new Date(year,11,25),'🎁');
+ add("New Year’s Eve",new Date(year,11,31),'✨','observance',observanceNote);
+ return list.sort((a,b)=>a.date-b.date||a.name.localeCompare(b.name));
+}
+function renderHolidayCalendar(year,month,today){
+ $('calendarHeading').textContent=months[month]+' '+year;
+ const monthStart=new Date(year,month,1),monthEnd=new Date(year,month+1,0);
+ // Also show observed New Year's Day from the following year if it falls on Dec 31.
+ const all=holidaysForYear(year).concat(holidaysForYear(year+1).filter(h=>h.date.getFullYear()===year));
+ const showing=all.filter(h=>h.date>=monthStart&&h.date<=monthEnd);
+ $('calendarSummary').textContent=showing.length+' holiday and observance entries in '+months[month]+' '+year;
+ $('calendarPanel').querySelector('.calendar-header p').textContent='Hell Days: annual holidays and observances with yearly calculated dates. These are not automatically confirmed closures for CCSD, individual banks, or private employers.';
+ $('calendarPanel').querySelector('.cal-legend').innerHTML='<span><i style="--legend:#456ca8"></i>Common federal/bank holiday</span><span><i style="--legend:#b98d42"></i>Nevada / variable closure</span><span><i style="--legend:#8c62b4"></i>Observance, not automatic closure</span>';
+ const dayNames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];let html=dayNames.map(d=>`<div class="cal-weekday" role="columnheader">${d}</div>`).join('');
+ const first=monthStart.getDay(),daysInMonth=monthEnd.getDate(),cells=Math.ceil((first+daysInMonth)/7)*7;
+ for(let i=0;i<cells;i++){
+  const day=i-first+1,inMonth=day>=1&&day<=daysInMonth;
+  if(!inMonth){html+='<div class="cal-day outside" role="gridcell"></div>';continue;}
+  const date=new Date(year,month,day),these=showing.filter(h=>dateKey(h.date)===dateKey(date));
+  const chips=these.map(h=>`<a href="#${safe(h.id)}" class="cal-event-chip holiday-${safe(h.kind)}" style="text-decoration:none" title="${safe(h.note)}"><span class="cal-chip-label">${h.icon} ${safe(h.name)}</span><span class="cal-chip-meta">${h.kind==='federal'?'Federal holiday / common closure':h.kind==='state'?'Variable closure':'Observance'}</span></a>`).join('');
+  html+=`<div class="cal-day${dateKey(date)===dateKey(today)?' today':''}${these.length?' cal-day-has-event':''}" role="gridcell"><div class="cal-number">${day}${these.length?` <span class="cal-day-count">${these.length}</span>`:''}</div><div class="cal-events">${chips}</div></div>`;
+ }
+ $('calendarGrid').innerHTML=html;
+ $('calendarMonthOnly').innerHTML=`<div class="holiday-explainer"><strong>🏦 Closures are employer-specific.</strong> A federal holiday often closes federal offices and many banks. School districts, private employers, and individual bank branches can follow different calendars. Valentine’s Day, Halloween, and similar observances are <strong>not</strong> automatic days off. Check the official calendar before making plans.</div><h4>${safe(months[month])} holidays and observances</h4><div class="holiday-info-list">${showing.map(h=>`<div id="${safe(h.id)}" class="holiday-info"><strong>${h.icon} ${safe(h.name)} — ${safe(months[month])} ${h.date.getDate()}</strong><div class="holiday-kind">${h.kind==='federal'?'Federal holiday / common closure':h.kind==='state'?'Nevada / varying workplace calendars':'Observance'}</div><p>${safe(h.note)}</p></div>`).join('')||'<p class="calendar-empty">No listed holidays this month. Use the arrows to view other months.</p>'}</div>`;
+ $('calendarLeads').innerHTML='Holiday dates are generated automatically each year. They are independent of the news discovery feed and do not change your saved outreach events.';
+}
+
 function renderCalendar(){
  const year=calendarCursor.getFullYear(),month=calendarCursor.getMonth(),today=new Date();
+ if(currentView==='holidays'){renderHolidayCalendar(year,month,today);return;}
+ $('calendarPanel').querySelector('.calendar-header p').textContent='Confirmed events appear on their actual days. Projected planning dates are labeled ESTIMATE and based on past event timing or recurring observances; check the organizer before scheduling outreach.';
+ $('calendarPanel').querySelector('.cal-legend').innerHTML='<span><i style="--legend:#8B6EAF"></i>Black heritage</span><span><i style="--legend:#0F8E86"></i>Hispanic / Latino</span><span><i style="--legend:#B98D42"></i>Native American</span><span><i style="--legend:#5079A9"></i>Multicultural</span>';
  $('calendarHeading').textContent=months[month]+' '+year;
  const query=$('search').value.trim().toLowerCase(),status=$('status').value;
  const matching=events.filter(e=>(!annualOnly||e.recurring==='yes')&&(!selectedCat||e.category===selectedCat)&&(!selectedType||e.type===selectedType)&&(!status||e.status===status)&&(!query||[e.name,e.location,e.notes,e.contact,e.category,e.type].join(' ').toLowerCase().includes(query)));
