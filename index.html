@@ -69,6 +69,39 @@
 .holiday-info strong{color:#263a61;font-size:13px}.holiday-info p{font-size:12px;color:#546b7b;line-height:1.5;margin:6px 0 0}
 .holiday-info .holiday-kind{font-size:10px;color:#806127;font-weight:800;margin-top:6px}
 .holiday-info:target{outline:3px solid #b98d42}
+
+/* Hell Days: full-year overview, quick navigation and accessible holiday chips */
+.hell-year-overview{padding-top:16px}.hell-year-overview h4{font-size:18px;color:#263a61;margin:4px 0 8px}.hell-year-overview p{font-size:12px;line-height:1.55}
+.hell-month-index{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin:13px 0 16px}
+.hell-month-btn{border:1px solid #bbd6d6;background:#eff8f7;color:#243e55;border-radius:9px;padding:9px 4px;font-size:12px;cursor:pointer}
+.hell-month-btn strong{color:#0b776e}.hell-month-btn.chosen{border-color:#b98d42;background:#fff3d9;box-shadow:inset 0 0 0 1px #b98d42}
+.hell-year-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hell-year-month{border:1px solid #cfdfdb;border-radius:12px;background:#fbfefd;padding:10px 12px;min-width:0}
+.hell-year-month h5{color:#263a61;font-size:14px;margin:3px 0 8px;border-bottom:1px solid #d7e6e4;padding-bottom:7px}
+.hell-year-month h5 small{font-size:10px;font-weight:500;color:#69818a;margin-left:5px}
+.hell-year-entry{display:flex;align-items:flex-start;gap:8px;padding:6px 0;font-size:12px;line-height:1.4;color:#263a61}
+.hell-year-date{min-width:25px;text-align:center;color:#fff;background:#49578a;border-radius:6px;font-size:11px;font-weight:800;padding:4px 2px}
+.hell-year-entry small{display:block;font-size:10px;color:#677b88}
+@media(max-width:760px){.hell-month-index{grid-template-columns:repeat(4,minmax(0,1fr))}.hell-year-list{grid-template-columns:1fr}}
+/* Hell Days is a date-and-duration list, not a monthly calendar. */
+.hell-list-mode .calendar-scroll,.hell-list-mode .cal-legend,.hell-list-mode #calendarMonthOnly{display:none!important}
+.hell-list-mode .calendar-header{align-items:center}
+.hell-list-mode .calendar-header .calendar-controls{flex-wrap:wrap}
+.hell-list-mode .hell-year-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.hell-list-mode .hell-year-month{padding:15px;background:#fff;border-color:#d4e8e4}
+.hell-list-mode .hell-year-entry{padding:11px 0;border-bottom:1px solid #ecf1ef;gap:11px}
+.hell-list-mode .hell-year-entry:last-child{border-bottom:0}
+.hell-list-mode .hell-year-date{min-width:54px;background:#e9f3f3;color:#263a61;text-align:center;font-size:11px;line-height:1.25;padding:8px 5px}
+.hell-event-detail{flex:1;min-width:0}
+.hell-event-title{font-size:13px;font-weight:750;color:#263a61}
+.hell-event-range{font-size:12px;font-weight:700;color:#0c7b77;margin:4px 0}
+.hell-duration{display:inline-block;font-size:11px;border-radius:99px;padding:3px 8px;background:#f5e9ce;color:#70511c;font-weight:700}
+.hell-type{display:inline-block;font-size:10px;color:#64567c;margin-left:6px}
+.hell-event-note{font-size:11px;color:#617482;margin-top:6px;line-height:1.45}
+.hell-year-list .hell-year-month h5{font-size:15px}
+.hell-year-overview{padding-top:4px}
+.hell-year-overview h4{font-size:18px}
+@media(max-width:800px){.hell-list-mode .hell-year-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -190,60 +223,119 @@ function easterSunday(y){ // Gregorian computus
 function observedFederalDate(date){const d=new Date(date);if(d.getDay()===6)d.setDate(d.getDate()-1);else if(d.getDay()===0)d.setDate(d.getDate()+1);return d}
 function holidaysForYear(year){
  const list=[];
- function add(name,date,icon,kind,note){list.push({id:'holiday-'+year+'-'+list.length,name,date,icon,kind,note})}
- const federalNote='Federal holiday. Many banks and government offices close; school district and employer calendars differ. Verify locally.';
- const observanceNote='Cultural or social observance, not an automatic bank or school closure.';
- function federal(name,date,icon){add(name,date,icon,'federal',federalNote);const observed=observedFederalDate(date);if(dateKey(observed)!==dateKey(date))add(name+' (federal observed date)',observed,'🏦','federal','Observed workday used by many federal offices. Banks may observe weekend holidays differently; confirm bank and school schedules.');}
+ function add(name,date,icon,kind,note){
+  const end=new Date(date);
+  // Exact, annually recurring observance ranges (inclusive). These are not days off.
+  if(name==='Black History Month begins')end.setMonth(2,0);
+  else if(name==='Pride Month begins')end.setDate(30);
+  else if(name==='Hispanic Heritage Month begins')end.setMonth(9,15);
+  else if(name==='Native American Heritage Month begins')end.setDate(30);
+  else if(name==='Kwanzaa begins')end.setFullYear(year+1,0,1);
+  else if(name==='Día de los Muertos — Day 1')end.setDate(2);
+  list.push({id:'holiday-'+year+'-'+list.length,name:name==='Día de los Muertos — Day 1'?'Día de los Muertos':name.replace(/ begins$/,'').replace(/ — Day 1$/,''),date,end,icon,kind,note});
+ }
+ const federalNote='Federal holiday; many federal offices and banks close. Bank observance and school closures can differ. Verify individual schedules.';
+ const observanceNote='Annual observance, not an automatic day off for banks, schools, or other employers.';
+ function federal(name,date,icon){add(name,date,icon,'federal',federalNote);const observed=observedFederalDate(date);if(dateKey(observed)!==dateKey(date))add(name+' (federal observed date)',observed,'🏦','federal','Observed federal office date. Federal Reserve banks do not necessarily follow Friday observances for Saturday holidays; verify bank schedules.');}
+ function obs(name,date,icon,note=observanceNote){add(name,date,icon,'observance',note)}
+ // Federal holidays and Nevada statutory holidays.
  federal("New Year's Day",new Date(year,0,1),'🎆');
  federal('Martin Luther King Jr. Day',nthWeekday(year,1,1,3),'✊');
- add("Valentine’s Day",new Date(year,1,14),'💝','observance',observanceNote);
- federal("Washington’s Birthday / Presidents’ Day",nthWeekday(year,2,1,3),'🏛️');
- add('Easter Sunday',easterSunday(year),'🌷','observance','Religious observance. Some organizations adjust hours or have school breaks nearby; exact dates off vary.');
- add("Mother’s Day",nthWeekday(year,5,0,2),'💐','observance',observanceNote);
+ federal('Washington’s Birthday / Presidents’ Day',nthWeekday(year,2,1,3),'🏛️');
  federal('Memorial Day',lastWeekday(year,5,1),'🇺🇸');
  federal('Juneteenth National Independence Day',new Date(year,5,19),'🎉');
- add("Father’s Day",nthWeekday(year,6,0,3),'👔','observance',observanceNote);
  federal('Independence Day',new Date(year,6,4),'🎆');
  federal('Labor Day',nthWeekday(year,9,1,1),'🛠️');
- federal('Columbus Day / Indigenous Peoples’ Day',nthWeekday(year,10,1,2),'🗓️');
- const nvDay=lastWeekday(year,10,5);
- add('Nevada Day (observed)',nvDay,'⭐','state','Nevada state holiday, observed on the last Friday of October. Government and school closures vary by agency or district; confirm locally.');
- add('Halloween',new Date(year,9,31),'🎃','observance',observanceNote);
+ federal('Columbus Day / Indigenous Peoples’ Day (federal date)',nthWeekday(year,10,1,2),'🗓️');
  federal('Veterans Day',new Date(year,10,11),'🎖️');
  federal('Thanksgiving Day',nthWeekday(year,11,4,4),'🦃');
- const afterThanksgiving=nthWeekday(year,11,4,4);afterThanksgiving.setDate(afterThanksgiving.getDate()+1);
- add('Day after Thanksgiving',afterThanksgiving,'🍂','state','Often a school or workplace break, but not a universal bank closure. Check the specific calendar.');
- add('Christmas Eve',new Date(year,11,24),'🎄','observance','Some offices close early or for the day; not a universal bank or school holiday.');
  federal('Christmas Day',new Date(year,11,25),'🎁');
- add("New Year’s Eve",new Date(year,11,31),'✨','observance',observanceNote);
+ const nvDay=lastWeekday(year,10,5);
+ add('Nevada Day (state holiday)',nvDay,'⭐','state','Nevada state holiday observed last Friday in October. Nevada public offices and schools generally close, subject to applicable calendars. Not a federal bank holiday.');
+ const family=nthWeekday(year,11,4,4);family.setDate(family.getDate()+1);
+ add('Nevada Family Day (state holiday)',family,'🍂','state','Nevada state holiday on the Friday after Thanksgiving. State office and school calendars generally recognize it; bank hours may differ.');
+ // Common US, Nevada cultural and school-planning observances (not necessarily days off).
+ obs('Epiphany / Three Kings Day',new Date(year,0,6),'👑');
+ obs('Groundhog Day',new Date(year,1,2),'🐿️');
+ obs('Super Bowl Sunday',nthWeekday(year,2,0,2),'🏈','Common U.S. sporting celebration, not a bank or school holiday. Game scheduling can change; verify the official date for this year.');
+ obs('Valentine’s Day',new Date(year,1,14),'💝');
+ obs('Black History Month begins',new Date(year,1,1),'📚','February is Black History Month; this is a month-long observance, not a workplace closure.');
+ const easter=easterSunday(year);
+ const ash=new Date(easter);ash.setDate(ash.getDate()-46);obs('Ash Wednesday',ash,'🕊️');
+ const mardi=new Date(ash);mardi.setDate(mardi.getDate()-1);obs('Mardi Gras',mardi,'🎭');
+ obs('International Women’s Day',new Date(year,2,8),'♀️');
+ obs('St. Patrick’s Day',new Date(year,2,17),'☘️');
+ obs('César Chávez Day (Nevada observance)',new Date(year,2,31),'🌱','Recognized observance in Nevada; not automatically a legal closure for schools or banks.');
+ const palm=new Date(easter);palm.setDate(palm.getDate()-7);obs('Palm Sunday',palm,'🌿');
+ const friday=new Date(easter);friday.setDate(friday.getDate()-2);obs('Good Friday',friday,'✝️','Christian observance. Some schools or businesses close, but it is not a federal holiday.');
+ obs('Easter Sunday',easter,'🌷');
+ obs('April Fools’ Day',new Date(year,3,1),'😄');
+ obs('Earth Day',new Date(year,3,22),'🌎');
+ obs('Cinco de Mayo',new Date(year,4,5),'🎊');
+ obs('Mother’s Day',nthWeekday(year,5,0,2),'💐');
+ obs('Pride Month begins',new Date(year,5,1),'🏳️‍🌈','June is Pride Month; this is not an automatic bank, school, or workplace closure.');
+ obs('Flag Day',new Date(year,5,14),'🇺🇸');
+ obs('Father’s Day',nthWeekday(year,6,0,3),'👔');
+ obs('Indigenous Peoples Day (Nevada recognition)',new Date(year,7,9),'🪶','Nevada recognizes August 9 as Indigenous Peoples Day; not automatically a workplace closure.');
+ obs('Women’s Equality Day',new Date(year,7,26),'⚖️');
+ obs('Patriot Day / September 11 Remembrance',new Date(year,8,11),'🕯️');
+ obs('Hispanic Heritage Month begins',new Date(year,8,15),'🎶','Month-long observance September 15–October 15; not a workplace holiday.');
+ obs('Halloween',new Date(year,9,31),'🎃');
+ obs('Día de los Muertos — Day 1',new Date(year,10,1),'🌼');
+ // The two-day Día de los Muertos observance is represented by one date range.
+ obs('Native American Heritage Month begins',new Date(year,10,1),'🪶','November is Native American Heritage Month; month-long observance, not an automatic closure.');
+ const election=new Date(year,10,1);election.setDate(election.getDate()+(2-election.getDay()+7)%7);if(election.getDate()===1)election.setDate(8);
+ obs('Election Day',election,'🗳️','Some schools may close or have staff development, depending on district and election year. Banks generally remain open.');
+ const thanksgiving=nthWeekday(year,11,4,4);const blackFriday=new Date(thanksgiving);blackFriday.setDate(blackFriday.getDate()+1);obs('Black Friday',blackFriday,'🛍️','Major U.S. shopping day following Thanksgiving; banks may be open and employer hours vary.');
+ const smallBiz=new Date(thanksgiving);smallBiz.setDate(smallBiz.getDate()+2);obs('Small Business Saturday',smallBiz,'🏬','Annual shopping observance two days after Thanksgiving; not an automatic day off.');
+ obs('Native American Heritage Day',blackFriday,'🪶','Annual observance on the Friday after Thanksgiving; it does not guarantee bank or school closure.');
+ obs('Christmas Eve',new Date(year,11,24),'🎄','Some organizations close early or for the day; this is not a universal bank or school closure.');
+ obs('Kwanzaa begins',new Date(year,11,26),'🕯️','Kwanzaa is observed December 26 through January 1; not an automatic school or bank closure.');
+ obs('New Year’s Eve',new Date(year,11,31),'✨');
  return list.sort((a,b)=>a.date-b.date||a.name.localeCompare(b.name));
 }
-function renderHolidayCalendar(year,month,today){
- $('calendarHeading').textContent=months[month]+' '+year;
- const monthStart=new Date(year,month,1),monthEnd=new Date(year,month+1,0);
- // Also show observed New Year's Day from the following year if it falls on Dec 31.
- const all=holidaysForYear(year).concat(holidaysForYear(year+1).filter(h=>h.date.getFullYear()===year));
- const showing=all.filter(h=>h.date>=monthStart&&h.date<=monthEnd);
- $('calendarSummary').textContent=showing.length+' holiday and observance entries in '+months[month]+' '+year;
- $('calendarPanel').querySelector('.calendar-header p').textContent='Hell Days: annual holidays and observances with yearly calculated dates. These are not automatically confirmed closures for CCSD, individual banks, or private employers.';
- $('calendarPanel').querySelector('.cal-legend').innerHTML='<span><i style="--legend:#456ca8"></i>Common federal/bank holiday</span><span><i style="--legend:#b98d42"></i>Nevada / variable closure</span><span><i style="--legend:#8c62b4"></i>Observance, not automatic closure</span>';
- const dayNames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];let html=dayNames.map(d=>`<div class="cal-weekday" role="columnheader">${d}</div>`).join('');
- const first=monthStart.getDay(),daysInMonth=monthEnd.getDate(),cells=Math.ceil((first+daysInMonth)/7)*7;
- for(let i=0;i<cells;i++){
-  const day=i-first+1,inMonth=day>=1&&day<=daysInMonth;
-  if(!inMonth){html+='<div class="cal-day outside" role="gridcell"></div>';continue;}
-  const date=new Date(year,month,day),these=showing.filter(h=>dateKey(h.date)===dateKey(date));
-  const chips=these.map(h=>`<a href="#${safe(h.id)}" class="cal-event-chip holiday-${safe(h.kind)}" style="text-decoration:none" title="${safe(h.note)}"><span class="cal-chip-label">${h.icon} ${safe(h.name)}</span><span class="cal-chip-meta">${h.kind==='federal'?'Federal holiday / common closure':h.kind==='state'?'Variable closure':'Observance'}</span></a>`).join('');
-  html+=`<div class="cal-day${dateKey(date)===dateKey(today)?' today':''}${these.length?' cal-day-has-event':''}" role="gridcell"><div class="cal-number">${day}${these.length?` <span class="cal-day-count">${these.length}</span>`:''}</div><div class="cal-events">${chips}</div></div>`;
- }
- $('calendarGrid').innerHTML=html;
- $('calendarMonthOnly').innerHTML=`<div class="holiday-explainer"><strong>🏦 Closures are employer-specific.</strong> A federal holiday often closes federal offices and many banks. School districts, private employers, and individual bank branches can follow different calendars. Valentine’s Day, Halloween, and similar observances are <strong>not</strong> automatic days off. Check the official calendar before making plans.</div><h4>${safe(months[month])} holidays and observances</h4><div class="holiday-info-list">${showing.map(h=>`<div id="${safe(h.id)}" class="holiday-info"><strong>${h.icon} ${safe(h.name)} — ${safe(months[month])} ${h.date.getDate()}</strong><div class="holiday-kind">${h.kind==='federal'?'Federal holiday / common closure':h.kind==='state'?'Nevada / varying workplace calendars':'Observance'}</div><p>${safe(h.note)}</p></div>`).join('')||'<p class="calendar-empty">No listed holidays this month. Use the arrows to view other months.</p>'}</div>`;
- $('calendarLeads').innerHTML='Holiday dates are generated automatically each year. They are independent of the news discovery feed and do not change your saved outreach events.';
+function holidayDateRange(h){
+ const fmt=new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'});
+ const start=fmt.format(h.date),end=fmt.format(h.end||h.date);
+ return start===end?start:start+' – '+end;
+}
+function holidayDuration(h){
+ const start=Date.UTC(h.date.getFullYear(),h.date.getMonth(),h.date.getDate());
+ const end=h.end||h.date;
+ return Math.round((Date.UTC(end.getFullYear(),end.getMonth(),end.getDate())-start)/86400000)+1;
+}
+function renderHolidayCalendar(year){
+ const panel=$('calendarPanel');panel.classList.add('hell-list-mode');
+ $('calendarHeading').textContent=String(year);
+ panel.querySelector('.calendar-header h3').textContent='Hell Days — yearly holiday dates';
+ panel.querySelector('.calendar-header p').textContent='Dates and duration automatically recalculate for each year. These are holiday/observance dates, not guaranteed days off from school, banks, or work.';
+ $('calToday').textContent='This year';
+ $('calPrev').setAttribute('aria-label','Previous year');
+ $('calNext').setAttribute('aria-label','Next year');
+ const all=holidaysForYear(year).concat(holidaysForYear(year+1).filter(h=>h.date.getFullYear()===year))
+   .filter(h=>h.date.getFullYear()===year).sort((a,b)=>a.date-b.date||a.name.localeCompare(b.name));
+ $('calendarSummary').textContent=all.length+' annual holidays and observances • '+year+' • Navigate years using the arrows';
+ $('calendarGrid').innerHTML='';$('calendarMonthOnly').innerHTML='';
+ const yearlyList=Array.from({length:12},(_,m)=>{
+  const monthly=all.filter(h=>h.date.getMonth()===m);
+  return `<section class="hell-year-month"><h5>${safe(months[m])} <small>${monthly.length} dates</small></h5>${monthly.map(h=>{
+   const n=holidayDuration(h);
+   const label=h.kind==='federal'?'Federal holiday (many offices/banks)':h.kind==='state'?'Nevada state holiday':'Observance (not automatic closure)';
+   const dateLabel=new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric'}).format(h.date);
+   return `<div class="hell-year-entry"><span class="hell-year-date">${safe(dateLabel)}</span><div class="hell-event-detail"><div class="hell-event-title">${h.icon} ${safe(h.name)}</div><div class="hell-event-range">${safe(holidayDateRange(h))}</div><span class="hell-duration">${n} ${n===1?'day':'days'}</span><span class="hell-type">${safe(label)}</span><div class="hell-event-note">${safe(h.note)}</div></div></div>`;
+  }).join('')}</section>`;
+ }).join('');
+ $('calendarLeads').innerHTML=`<section class="hell-year-overview"><h4>🗓️ Hell Days — ${year}</h4><div class="holiday-explainer"><strong>Automatically updated by year:</strong> Fixed-date holidays, weekday-based holidays, Easter-related dates, and observed federal dates are calculated for the selected year. A multi-day observance lasts the total days shown, but that does <strong>not</strong> mean schools or banks are closed for every day. Confirm CCSD and bank closure schedules separately.</div><div class="hell-year-list">${yearlyList}</div></section>`;
 }
 
 function renderCalendar(){
  const year=calendarCursor.getFullYear(),month=calendarCursor.getMonth(),today=new Date();
- if(currentView==='holidays'){renderHolidayCalendar(year,month,today);return;}
+ if(currentView==='holidays'){renderHolidayCalendar(year);return;}
+ $('calendarPanel').classList.remove('hell-list-mode');
+ $('calendarPanel').querySelector('.calendar-header h3').textContent='Event calendar';
+ $('calToday').textContent='Today';
+ $('calPrev').setAttribute('aria-label','Previous month');
+ $('calNext').setAttribute('aria-label','Next month');
  $('calendarPanel').querySelector('.calendar-header p').textContent='Confirmed events appear on their actual days. Projected planning dates are labeled ESTIMATE and based on past event timing or recurring observances; check the organizer before scheduling outreach.';
  $('calendarPanel').querySelector('.cal-legend').innerHTML='<span><i style="--legend:#8B6EAF"></i>Black heritage</span><span><i style="--legend:#0F8E86"></i>Hispanic / Latino</span><span><i style="--legend:#B98D42"></i>Native American</span><span><i style="--legend:#5079A9"></i>Multicultural</span>';
  $('calendarHeading').textContent=months[month]+' '+year;
@@ -291,9 +383,9 @@ function renderCalendar(){
 }
 $('calendarGrid').addEventListener('click',e=>{const b=e.target.closest('[data-cal-edit]');if(b)editEvent(b.dataset.calEdit)});
 $('calendarMonthOnly').addEventListener('click',e=>{const b=e.target.closest('[data-cal-edit]');if(b)editEvent(b.dataset.calEdit)});
-$('calPrev').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()-1,1);renderCalendar()};
-$('calNext').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()+1,1);renderCalendar()};
-$('calToday').onclick=()=>{const n=new Date();calendarCursor=new Date(n.getFullYear(),n.getMonth(),1);renderCalendar()};
+$('calPrev').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear()-(currentView==='holidays'?1:0),currentView==='holidays'?0:calendarCursor.getMonth()-1,1);renderCalendar()};
+$('calNext').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear()+(currentView==='holidays'?1:0),currentView==='holidays'?0:calendarCursor.getMonth()+1,1);renderCalendar()};
+$('calToday').onclick=()=>{const n=new Date();calendarCursor=new Date(n.getFullYear(),currentView==='holidays'?0:n.getMonth(),1);renderCalendar()};
 function resetForm(){$('eventForm').reset();$('eventId').value='';$('formTitle').textContent='Add an event'}function editEvent(id){const e=events.find(x=>x.id===id);if(!e)return;const fields={eventId:'id',name:'name',formCategory:'category',formMonth:'month',type:'type',date:'date',endDate:'endDate',location:'location',recurring:'recurring',formStatus:'status',booth:'booth',flyers:'flyers',contact:'contact',url:'url',notes:'notes'};Object.entries(fields).forEach(([dom,prop])=>$(dom).value=e[prop]??'');$('formTitle').textContent='Edit event';$('editor').scrollIntoView({behavior:'smooth'})}function exportData(){let blob=new Blob([JSON.stringify(events,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='vegas-outreach-events-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 $('cards').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]');if(edit)editEvent(edit.dataset.edit);if(del&&confirm('Delete this event?')){events=events.filter(x=>x.id!==del.dataset.delete);save()}});
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setSelection(b.dataset.view)));document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>setSelection('calendar',b.dataset.cat)));document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>setSelection('calendar','',b.dataset.type)));$('jumpEditor').onclick=$('addTop').onclick=()=>$('editor').scrollIntoView({behavior:'smooth'});$('jumpBackup').onclick=()=>$('backup').scrollIntoView({behavior:'smooth'});$('exportTop').onclick=exportData;$('clearForm').onclick=resetForm;
