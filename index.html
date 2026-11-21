@@ -137,7 +137,19 @@
 .finder-preview{border:1px solid #bcd4d4;background:#fff;border-radius:14px;padding:18px;margin:16px 0}
 .finder-preview h4{margin:0 0 5px;color:#263a61}
 .finder-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
-.finder-saved{margin-top:22px}.finder-saved h4{color:#263a61;margin-bottom:10px}.finder-saved .event{border-left:4px solid #0f8e86}
+/* Flyer/link imports: same month-card layout as Hell Days */
+.finder-saved{margin-top:22px}.finder-saved h4{color:#263a61;margin-bottom:10px}
+.finder-saved .hell-year-list{margin-top:13px}
+.finder-saved .hell-year-month{background:#fff}
+.finder-saved .hell-year-entry{border-bottom:1px solid #e9f0ef;padding:12px 0}
+.finder-saved .hell-year-entry:last-child{border-bottom:none}
+.finder-saved .hell-year-date{min-width:56px;background:#e9f3f3;color:#263a61}
+.finder-verification{display:inline-block;margin:5px 0;border-radius:20px;padding:4px 9px;font-size:11px;font-weight:800;background:#fff0d1;color:#805b1b}
+.finder-verification.confirmed{background:#ddf3e7;color:#176543}
+.finder-saved .actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.finder-flyer-thumbnail{display:block;width:auto;max-width:120px;max-height:145px;border:1px solid #d4e8e4;border-radius:7px;margin-top:8px;object-fit:contain}
+.finder-event-hint{font-size:11px;line-height:1.5;color:#607783;margin:9px 0}
+
 .finder-small{font-size:12px;color:#607783;line-height:1.6;margin-top:15px}
 @media(max-width:720px){.finder-ways{grid-template-columns:1fr}}
 </style>
@@ -175,10 +187,10 @@
   <div id="finderMessage" class="finder-message" role="status" aria-live="polite">Choose a link or photo above to begin.</div>
   <div class="finder-preview hidden" id="finderPreview"><h4>Review event before adding</h4><p class="muted">These fields are suggestions from the source, not verified facts. Check the official organizer before planning outreach. Missing information can be corrected here.</p>
    <div class="formgrid"><label class="full">Event name<input id="finderName" placeholder="Name from flyer or website"></label><label>Start date<input type="date" id="finderDate"></label><label>End date<input type="date" id="finderEndDate"></label><label>Category<select id="finderCategory"><option>Multicultural / General</option><option>Black / African American</option><option>Hispanic / Latino</option><option>Native American / Indigenous</option></select></label><label>Event type<select id="finderType"><option>Other</option><option>Parade</option><option>Festival</option><option>Booth</option></select></label><label class="full">Location<input id="finderLocation" placeholder="Venue, city, address"></label><label class="full">Source URL<input id="finderSource" type="url" placeholder="https://..."></label><label class="full">Notes / organizer information<textarea id="finderNotes" rows="3"></textarea></label></div>
-   <div class="finder-actions"><button type="button" class="btn" id="finderSave">Save to my event list</button><button type="button" class="btn secondary" id="finderResearch">Research on web ↗</button><button type="button" class="btn secondary" id="finderReset">Clear</button></div>
+   <div class="finder-actions"><button type="button" class="btn" id="finderSave">Save corrections / add unconfirmed</button><button type="button" class="btn secondary" id="finderResearch">Research on web ↗</button><button type="button" class="btn secondary" id="finderReset">Clear</button></div>
   </div>
-  <div class="finder-saved"><h4>Events added through Event Finder</h4><div id="finderSavedList" class="cards"></div></div>
-  <div class="finder-small">Imported events are saved to this browser, labeled <strong>Researching</strong>, and included in the event directory. For a public site on GitHub Pages, automatic web extraction is best-effort: blocked websites may require checking the source link. Flyer reading requires an internet connection for the OCR library, but the image is processed in your browser rather than uploaded to our server. This is not a background AI research service.</div>
+  <div class="finder-saved"><h4>Events added through Event Finder</h4><p class="finder-event-hint">New flyer and link imports appear here as <strong>Unconfirmed</strong>. Confirm only after checking the organizer, or remove an incorrect import. Cards use the same month-by-month layout as Hell Days.</p><div id="finderSavedList" class="hell-year-list"></div></div>
+  <div class="finder-small">Imported events are saved in this browser as <strong>Unconfirmed</strong>, appear as Hell Days-style cards, and can be confirmed or removed. For a public site on GitHub Pages, automatic web extraction is best-effort: blocked websites may require checking the source link. Flyer reading requires an internet connection for the OCR library, but the image is processed in your browser rather than uploaded to our server. This is not a background AI research service.</div>
 </section>
 <section id="editor" class="panel hidden"><h3 id="formTitle">Add an event</h3><p class="muted">Keep details on events you plan to attend or research.</p><form class="formgrid" id="eventForm"><input type="hidden" id="eventId"><label>Event name *<input id="name" required placeholder="e.g. Community heritage parade"></label><label>Heritage category<select id="formCategory"><option>Black / African American</option><option>Hispanic / Latino</option><option>Native American / Indigenous</option><option>Multicultural / General</option></select></label><label>Typical month<select id="formMonth"></select></label><label>Event type<select id="type"><option>Parade</option><option>Festival</option><option>Booth</option><option>Other</option></select></label><label>Start date (optional)<input id="date" type="date"></label><label>End date (optional, for multi-day events)<input id="endDate" type="date"></label><label>City / location<input id="location" placeholder="Las Vegas, NV"></label><label>Recurring?<select id="recurring"><option value="yes">Annual / recurring</option><option value="no">One-time</option></select></label><label>Outreach status<select id="formStatus"><option>Researching</option><option>Contacted</option><option>Awaiting approval</option><option>Approved</option><option>Completed</option><option>Not permitted</option></select></label><label>Booth opportunity<select id="booth"><option>Unknown</option><option>Yes - confirmed</option><option>No</option><option>Application needed</option></select></label><label>Flyer distribution<select id="flyers"><option>Unknown</option><option>Allowed - confirmed</option><option>Not allowed</option><option>Permission requested</option></select></label><label>Organizer / contact<input id="contact" placeholder="Name, email, phone"></label><label>Official event website<input id="url" type="url" placeholder="https://..."></label><label class="full">Notes / registration deadline<textarea id="notes" rows="3" placeholder="Vendor application, registration, booth or permit information…"></textarea></label><div class="full form-actions"><button type="submit" class="btn">Save event</button><button type="button" class="btn secondary" id="clearForm">Clear form</button></div></form></section>
 <section class="panel hidden" id="backup"><h3>Backup & restore</h3><p class="muted">Your manual event records stay in this browser, not synced across devices. Export a JSON backup before clearing your browser data.</p><label class="muted">Restore an exported JSON file<input type="file" id="importFile" accept=".json,application/json" style="margin-top:9px"></label></section>
@@ -451,7 +463,7 @@ $('calendarLeads').addEventListener('click',e=>{const b=e.target.closest('[data-
 function resetForm(){$('eventForm').reset();$('eventId').value='';$('formTitle').textContent='Add an event'}function editEvent(id){const e=events.find(x=>x.id===id);if(!e)return;setSelection('planning');const fields={eventId:'id',name:'name',formCategory:'category',formMonth:'month',type:'type',date:'date',endDate:'endDate',location:'location',recurring:'recurring',formStatus:'status',booth:'booth',flyers:'flyers',contact:'contact',url:'url',notes:'notes'};Object.entries(fields).forEach(([dom,prop])=>$(dom).value=e[prop]??'');$('formTitle').textContent='Edit event';$('editor').scrollIntoView({behavior:'smooth'})}function exportData(){let blob=new Blob([JSON.stringify(events,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='vegas-outreach-events-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 $('cards').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]');if(edit)editEvent(edit.dataset.edit);if(del&&confirm('Delete this event?')){events=events.filter(x=>x.id!==del.dataset.delete);save()}});
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setSelection(b.dataset.view)));document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>setSelection('dated',b.dataset.cat)));document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>setSelection('dated','',b.dataset.type)));$('jumpBackup').onclick=()=>{setSelection('planning');$('backup').scrollIntoView({behavior:'smooth'});};$('exportTop').onclick=exportData;$('clearForm').onclick=resetForm;
-$('eventForm').addEventListener('submit',e=>{e.preventDefault();const fields={name:'name',formCategory:'category',formMonth:'month',type:'type',date:'date',endDate:'endDate',location:'location',recurring:'recurring',formStatus:'status',booth:'booth',flyers:'flyers',contact:'contact',url:'url',notes:'notes'},record={id:$('eventId').value||'event-'+Date.now()};Object.entries(fields).forEach(([dom,prop])=>record[prop]=$(dom).value);record.month=Number(record.month);if(!record.name.trim())return;if(record.endDate&&!record.date){alert('Enter a start date before an end date.');return}if(record.endDate&&record.endDate<record.date){alert('End date cannot be before start date.');return}if(events.some(x=>x.id===record.id))events=events.map(x=>x.id===record.id?record:x);else events.push(record);save();resetForm();window.scrollTo({top:0,behavior:'smooth'})});
+$('eventForm').addEventListener('submit',e=>{e.preventDefault();const fields={name:'name',formCategory:'category',formMonth:'month',type:'type',date:'date',endDate:'endDate',location:'location',recurring:'recurring',formStatus:'status',booth:'booth',flyers:'flyers',contact:'contact',url:'url',notes:'notes'},record={...(events.find(x=>x.id===$('eventId').value)||{}),id:$('eventId').value||'event-'+Date.now()};Object.entries(fields).forEach(([dom,prop])=>record[prop]=$(dom).value);record.month=Number(record.month);if(!record.name.trim())return;if(record.endDate&&!record.date){alert('Enter a start date before an end date.');return}if(record.endDate&&record.endDate<record.date){alert('End date cannot be before start date.');return}if(events.some(x=>x.id===record.id))events=events.map(x=>x.id===record.id?record:x);else events.push(record);save();resetForm();window.scrollTo({top:0,behavior:'smooth'})});
 $('importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d)||!d.every(x=>x&&typeof x.name==='string'&&typeof x.id==='string'))throw Error('Invalid backup');if(confirm('Replace your saved event list with the backup?')){events=d;save();resetForm();alert('Backup restored')}}catch{alert('Could not read this backup file.')}e.target.value=''});
 months.forEach((m,i)=>{let option=document.createElement('option');option.value=String(i+1);option.textContent=m;$('month').append(option);let o=option.cloneNode(true);$('formMonth').append(o)});['search','month','status'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
 async function loadLeads(){try{const res=await fetch('./discovered-events.json',{cache:'no-store'});if(!res.ok)throw Error('Missing event feed');const data=await res.json();leads=Array.isArray(data.leads)?data.leads:[];$('leadMeta').textContent=`${leads.length} potential leads · Last checked ${data.updated?new Date(data.updated).toLocaleString():'unknown'} · Verify every listing with the organizer`;render()}catch{$('leadMeta').textContent='Automatic discovery feed unavailable. Check the GitHub Actions workflow and the discovered-events.json file.';render()}}
@@ -459,11 +471,52 @@ async function loadLeads(){try{const res=await fetch('./discovered-events.json',
 // Event Finder: best-effort browser-side extraction with a required user review.
 function renderFinderSaved(){
  const imported=events.filter(e=>String(e.id||'').startsWith('import-')).slice().reverse();
- $('finderSavedList').innerHTML=imported.length?imported.map(e=>`<article class="event"><span class="tag amber">Needs verification</span><h4>${safe(e.name)}</h4><p>${safe(e.date||'Date not yet entered')} ${e.endDate?' through '+safe(e.endDate):''}<br>📍 ${safe(e.location||'Location unconfirmed')}</p>${safeUrl(e.url)?`<a href="${safe(safeUrl(e.url))}" target="_blank" rel="noopener noreferrer">Check source ↗</a>`:''}<div class="actions"><button type="button" class="btn secondary small" data-finder-edit="${safe(e.id)}">Edit in Planning</button></div></article>`).join(''):'<p class="muted">No imported events yet. Paste a public link or upload a flyer to get started.</p>';
+ const groups=Array.from({length:13},(_,m)=>{
+  const subset=imported.filter(e=>{const d=parseLocalDate(e.date);return m===12?!d:d?d.getMonth()===m:Math.max(0,Math.min(11,(Number(e.month)||1)-1))===m});
+  if(!subset.length)return '';
+  const heading=m===12?'Date to confirm':months[m];
+  return `<section class="hell-year-month"><h5>${safe(heading)} <small>${subset.length} event${subset.length===1?'':'s'}</small></h5>${subset.map(e=>{
+    const d=parseLocalDate(e.date),end=parseLocalDate(e.endDate)||d;
+    const duration=d&&end?Math.max(1,Math.round((Date.UTC(end.getFullYear(),end.getMonth(),end.getDate())-Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()))/86400000)+1):null;
+    const dateLabel=d?new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'}).format(d)+(end&&e.endDate&&e.endDate!==e.date?' – '+new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'}).format(end):''):'Date not confirmed';
+    const verified=e.finderVerification==='confirmed';
+    const photo=String(e.flyerThumbnail||'');
+    return `<div class="hell-year-entry"><span class="hell-year-date">${d?safe(new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric'}).format(d)):'TBD'}</span><div class="hell-event-detail"><div class="hell-event-title">${safe(e.type==='Parade'?'🚩':e.type==='Festival'?'🎉':e.type==='Booth'?'🏪':'📌')} ${safe(e.name)}</div><div class="hell-event-range">${safe(dateLabel)}</div><span class="hell-duration">${duration?duration+' '+(duration===1?'day':'days'):'Duration to confirm'}</span><span class="finder-verification ${verified?'confirmed':''}">${verified?'✓ Confirmed by you':'? Unconfirmed — needs review'}</span><div class="hell-event-note">${safe(e.category)}${e.location?'<br>📍 '+safe(e.location):'<br>📍 Location to confirm'}<br>Organizer and booth permissions need separate verification.</div>${photo.startsWith('data:image/jpeg;base64,')?'<img class="finder-flyer-thumbnail" alt="Uploaded event flyer preview" src="'+safe(photo)+'">':''}${safeUrl(e.url)?'<p><a href="'+safe(safeUrl(e.url))+'" target="_blank" rel="noopener noreferrer">Event source ↗</a></p>':''}<div class="actions"><button type="button" class="btn secondary small" data-finder-edit="${safe(e.id)}">Edit details</button>${!verified?'<button type="button" class="btn small" data-finder-confirm="'+safe(e.id)+'">Confirm event</button>':'<button type="button" class="btn secondary small" data-finder-unconfirm="'+safe(e.id)+'">Mark unconfirmed</button>'}<button type="button" class="btn danger small" data-finder-remove="${safe(e.id)}">Remove</button></div></div></div>`;
+   }).join('')}</section>`;
+ }).filter(Boolean).join('');
+ $('finderSavedList').innerHTML=groups||'<p class="muted">No imported events yet. Paste a public link or upload a flyer to get started.</p>';
 }
-$('finderSavedList').addEventListener('click',e=>{const b=e.target.closest('[data-finder-edit]');if(b)editEvent(b.dataset.finderEdit)});
-let finderOriginalText='';
+$('finderSavedList').addEventListener('click',e=>{
+ const b=e.target.closest('[data-finder-edit],[data-finder-confirm],[data-finder-unconfirm],[data-finder-remove]');if(!b)return;
+ if(b.dataset.finderEdit){editEvent(b.dataset.finderEdit);return}
+ const id=b.dataset.finderConfirm||b.dataset.finderUnconfirm||b.dataset.finderRemove;
+ const event=events.find(x=>x.id===id);if(!event)return;
+ if(b.dataset.finderRemove){if(!confirm('Remove "'+event.name+'" from your saved event list?'))return;events=events.filter(x=>x.id!==id);save();finderMessage('Event removed.');return}
+ if(b.dataset.finderConfirm){
+  if(!event.date){finderMessage('Add the event date in Edit details before confirming it.',true);return}
+  if(!confirm('Have you checked this event and date with the organizer? Confirm "'+event.name+'"?'))return;
+  event.finderVerification='confirmed';save();finderMessage('Event marked confirmed by you. Outreach booth/flyer permission is still unverified.');return;
+ }
+ event.finderVerification='unconfirmed';save();finderMessage('Event returned to Unconfirmed status.');
+});
+let finderOriginalText='';let finderDraftId='';let finderFlyerThumb='';
 function finderMessage(message,error=false){const el=$('finderMessage');el.textContent=message;el.classList.toggle('error',error)}
+function flyerThumb(file){
+ return new Promise(resolve=>{
+  const img=new Image(),url=URL.createObjectURL(file);
+  img.onload=()=>{try{const c=document.createElement('canvas');const scale=Math.min(1,280/img.width,280/img.height);c.width=Math.max(1,Math.round(img.width*scale));c.height=Math.max(1,Math.round(img.height*scale));c.getContext('2d').drawImage(img,0,0,c.width,c.height);const data=c.toDataURL('image/jpeg',.55);resolve(data.length<110000?data:'')}catch{resolve('')}finally{URL.revokeObjectURL(url)}};
+  img.onerror=()=>{URL.revokeObjectURL(url);resolve('')};img.src=url;
+ });
+}
+function finderAutoDraft(){
+ const name=$('finderName').value.trim()||'Flyer event — needs review',date=$('finderDate').value,endDate=$('finderEndDate').value;
+ if(endDate&&(!date||endDate<date))$('finderEndDate').value='';
+ const dt=$('finderDate').value,month=dt?Number(dt.slice(5,7)):new Date().getMonth()+1;
+ const record={id:'import-'+Date.now(),name,category:$('finderCategory').value,month,type:$('finderType').value,date:dt,endDate:$('finderEndDate').value,location:$('finderLocation').value.trim(),recurring:'no',status:'Researching',finderVerification:'unconfirmed',booth:'Unknown',flyers:'Unknown',contact:'',url:safeUrl($('finderSource').value),notes:'Imported by Event Finder; event details require organizer verification.\n'+$('finderNotes').value.trim(),flyerThumbnail:finderFlyerThumb};
+ events.push(record);finderDraftId=record.id;
+ try{save()}catch{record.flyerThumbnail='';save();finderMessage('Saved the unconfirmed event without the thumbnail because browser storage was full.',true)}
+ return record;
+}
 function finderISO(value){
  if(!value)return '';
  let v=String(value).trim();
@@ -515,7 +568,7 @@ $('finderAnalyzeLink').onclick=async()=>{
   finderAnalyzeText(content);
   if(data){$('finderName').value=String(data.name||title);$('finderDate').value=finderISO(data.startDate)||$('finderDate').value;$('finderEndDate').value=finderISO(data.endDate);const place=data.location;const placeName=typeof place==='string'?place:(place?.name||[place?.address?.streetAddress,place?.address?.addressLocality].filter(Boolean).join(', '));if(placeName)$('finderLocation').value=placeName}
   $('finderSource').value=url;
-  finderMessage('Extracted available page details. Check the dates, location and official source before saving.');
+  finderFlyerThumb='';finderAutoDraft();finderMessage('Added as an Unconfirmed event below. Review the details, save corrections, then confirm only after verifying the event.');
  }catch(err){
   finderAnalyzeText(new URL(url).hostname.replace(/^www\./,'')+' event');$('finderName').value='';$('finderNotes').value='Source link needs manual review. Page blocked automatic reading from this browser.';$('finderSource').value=url;
   finderMessage('This website blocks direct browser reading. Its link is saved below; open the source or Research on web, then complete the event details before saving.',true);
@@ -529,19 +582,20 @@ $('finderAnalyzeFlyer').onclick=async()=>{
   if(!window.Tesseract){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';script.onload=resolve;script.onerror=()=>reject(Error('OCR library unavailable'));document.head.appendChild(script)})}
   const res=await window.Tesseract.recognize(f,'eng');const t=res.data?.text||'';
   if(!t.trim())throw Error('No readable text found');
-  $('finderSource').value='';finderAnalyzeText(t);finderMessage('Flyer text extracted. Review event name, date and location carefully before saving.');
+  $('finderSource').value='';finderAnalyzeText(t);finderFlyerThumb=await flyerThumb(f);finderAutoDraft();finderMessage('Flyer scanned and an Unconfirmed event card was added below. OCR can misread text: correct any errors before confirming.');
  }catch(err){finderMessage('Could not read the flyer automatically. Try a sharper photo with larger text, or use a public event link.',true)}
 };
 $('finderResearch').onclick=()=>window.open(finderSearchURL(),'_blank','noopener,noreferrer');
-$('finderReset').onclick=()=>{$('finderLink').value='';$('finderFlyer').value='';$('finderPreview').classList.add('hidden');finderOriginalText='';finderMessage('Ready for another event.')};
+$('finderReset').onclick=()=>{$('finderLink').value='';$('finderFlyer').value='';$('finderPreview').classList.add('hidden');finderOriginalText='';finderDraftId='';finderFlyerThumb='';finderMessage('Ready for another event.')};
 $('finderSave').onclick=()=>{
  const name=$('finderName').value.trim();if(!name){finderMessage('Please confirm an event name before saving.',true);return}
  const date=$('finderDate').value,endDate=$('finderEndDate').value;
  if(endDate&&!date){finderMessage('Add a start date or clear the end date.',true);return}
  if(endDate&&endDate<date){finderMessage('End date cannot be before start date.',true);return}
  const month=date?Number(date.slice(5,7)):new Date().getMonth()+1;
- const record={id:'import-'+Date.now(),name,category:$('finderCategory').value,month,type:$('finderType').value,date,endDate,location:$('finderLocation').value.trim(),recurring:'no',status:'Researching',booth:'Unknown',flyers:'Unknown',contact:'',url:safeUrl($('finderSource').value),notes:'Imported by Event Finder; source and date require organizer verification.\n'+$('finderNotes').value.trim()};
- events.push(record);save();finderMessage('Saved “'+name+'” to your event list. Find it under All events. It remains marked Researching until you verify its details.');$('finderPreview').classList.add('hidden');$('finderLink').value='';$('finderFlyer').value='';
+ const old=events.find(x=>x.id===finderDraftId);
+ const record={id:old?.id||'import-'+Date.now(),name,category:$('finderCategory').value,month,type:$('finderType').value,date,endDate,location:$('finderLocation').value.trim(),recurring:'no',status:'Researching',finderVerification:'unconfirmed',booth:'Unknown',flyers:'Unknown',contact:'',url:safeUrl($('finderSource').value),notes:'Imported by Event Finder; source and date require organizer verification.\n'+$('finderNotes').value.trim(),flyerThumbnail:old?.flyerThumbnail||finderFlyerThumb};
+ if(old)events=events.map(e=>e.id===record.id?record:e);else events.push(record);save();finderMessage('Saved “'+name+'” as Unconfirmed. Its Hell Days-style event card is shown below; you can confirm or remove it there.');$('finderPreview').classList.add('hidden');$('finderLink').value='';$('finderFlyer').value='';finderDraftId='';finderFlyerThumb='';
 };
 
 render();loadLeads();
