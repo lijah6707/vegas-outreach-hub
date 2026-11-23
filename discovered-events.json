@@ -1,7 +1,14 @@
 {
-  "updated": "2026-11-22T15:12:02.161457+00:00",
+  "updated": "2026-11-23T15:32:39.074101+00:00",
   "note": "These are web search leads, not verified event listings or approved outreach opportunities.",
   "leads": [
+    {
+      "title": "Florida St Patrick’s Day parade cancelled over Republican anti-DEI law, causing outrage - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNakFZRXItS05XbVlLR0NaZ3J4eGcxTWdLX01OR0dvZ0VmSExnUHY0ZHFLM2s4M0dyS0RobmxJSGRJOUpDTkZpOXR1bWZPTkVxeG1LSHJxZWk0OE14ZHEwNkM0VjhCYXRkUUc0ZDVsWFJVMHFEU3ZmT2VuUHFXSnpWcVFvQTRYRC1jS1JKenhadUxvQlFSd0U4?oc=5",
+      "category": "Black / African American",
+      "search": "Las Vegas Juneteenth festival parade 2027",
+      "published": "Thu, 12 Nov 2026 08:00:00 GMT"
+    },
     {
       "title": "Las Vegas teen crowned Miss Juneteenth Nevada queen - FOX5 Vegas",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUFlVTTlSSFdTS1hmeG9PclJPdnFIV19vUjE5R0JiWmJvQkRDNUhBOE9lZTNmU29PQVlLa0RwcWRrelpKSFR5eFBGWElWclpRdENlRlpaVmtDcVBMUW5sQW5ic0Q0NVFaNDNqZFFBdG5qZWkwZWJ2WEw1dmlSTGJPTFZSV0d5ekwyZTdnUUwwVHZreHc?oc=5",
@@ -10,25 +17,18 @@
       "published": "Wed, 17 Jun 2026 07:00:00 GMT"
     },
     {
-      "title": "10 notable Juneteenth celebrations across the US - CW39 Houston",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPU1RQd1FsZ2RubzBybS1BNkVIbnltUFNyZV9ncTRBWVRwdFFONW1ITEJYRV8tNDg0TEZqdDRMMjlFc1d2Zl9ncEZyZFIxZktTOGh0ZEdrbEFwaFVjT0VUc0RHcmJJMW9HTy1HQlJqTEdTZnZ2NVY3dWJOaEVjUDc3ZzMxZ9IBiAFBVV95cUxPN0lnUjhtZzZQdHZ4dl9pT2NRMXBDVFFHaW02Y1VuOE5Wdm5vcmgzb3dSczk1cU9MNUxrZWc2LUd5ZFpscWZvVFB6WmU4ODRseU11YUR0cWVGVFFJWDBZc3B1cFhSVURleWpIYmdnR0N0STZKMjZYU2ZxenFrYUhJRnhoZUF4NDJf?oc=5",
-      "category": "Black / African American",
-      "search": "Las Vegas Juneteenth festival parade 2027",
-      "published": "Wed, 12 Jun 2024 07:00:00 GMT"
-    },
-    {
-      "title": "Delray Beach Cancels 2027 St. Patrick's Day Parade Under Florida Law - BIG 105.9",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQU3ZTNzhwbW9ZTWVldDFVV3lIV0piMERZSlhLTjZOemxZekxjSE5rQ3MyYnlkMkFwZDBOdEZ0RFplSVp5b2x3bjZmckxLQWhDMWVnN1NtZzZxUkx0Zkd2ZEFuYmhmdXFwd3I4aTcxQWw1a3lMV2NTTkY5cmhEcVFGSjZWVjkxbFh3VVotVkx5UnYxMk5OUy1XNFNvWTBLcjZ5U0FiVDhiZGpOUkhzQm81T09CLWUzd0hBR3F4ZXZxc3hnNGtTN0h4ZkY3eGJOcEVD?oc=5",
-      "category": "Black / African American",
-      "search": "Las Vegas Juneteenth festival parade 2027",
-      "published": "Fri, 13 Nov 2026 20:00:00 GMT"
-    },
-    {
       "title": "Charli XCX, Tate McRae, Lorde, Olivia Dean, John Summit, Jennie, The Smashing Pumpkins and The XX to Headline Lollapalooza 2026 - Live Nation Newsroom",
       "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQQlpobEZnRjJMOTRUbjhpZmJiVWEtUjROZ2h6X1FqSHFqV0tlZndJQ0pIdHRYNExvbXhldzFFLVZEVGhaM2lwQ05CdHp3RWpoVEIwLUJpcG1WNHVTazBMWWQzOUcwRWJsSjZmbGQ4YnNWUWNMVExrdmJCem1fRjFfakpnWGVLb0NnQ3B0eV9RVVVkWno5ZXdmTWVlY3RFZ1BnWmVuRC1mUTNpZEdJUGRyeVdDVVc1aXhwaUt3d3UzdVZ3bHg4QWxZMUREQy04ejBUZldlNy1ieFVTVHJwMm12ZW9FME5fa3k2S2czQjM5NjR2RXJnNzk4aXJhRQ?oc=5",
       "category": "Black / African American",
       "search": "Las Vegas Juneteenth festival parade 2027",
       "published": "Wed, 18 Mar 2026 07:00:00 GMT"
+    },
+    {
+      "title": "10 notable Juneteenth celebrations across the US - CW39 Houston",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPU1RQd1FsZ2RubzBybS1BNkVIbnltUFNyZV9ncTRBWVRwdFFONW1ITEJYRV8tNDg0TEZqdDRMMjlFc1d2Zl9ncEZyZFIxZktTOGh0ZEdrbEFwaFVjT0VUc0RHcmJJMW9HTy1HQlJqTEdTZnZ2NVY3dWJOaEVjUDc3ZzMxZ9IBiAFBVV95cUxPN0lnUjhtZzZQdHZ4dl9pT2NRMXBDVFFHaW02Y1VuOE5Wdm5vcmgzb3dSczk1cU9MNUxrZWc2LUd5ZFpscWZvVFB6WmU4ODRseU11YUR0cWVGVFFJWDBZc3B1cFhSVURleWpIYmdnR0N0STZKMjZYU2ZxenFrYUhJRnhoZUF4NDJf?oc=5",
+      "category": "Black / African American",
+      "search": "Las Vegas Juneteenth festival parade 2027",
+      "published": "Wed, 12 Jun 2024 07:00:00 GMT"
     },
     {
       "title": "Bruno Mars Announces ‘The Romantic Tour’ First Global Headline Tour In Nearly A Decade And First Global Stadium Outing - Live Nation Newsroom",
@@ -94,13 +94,6 @@
       "published": "Sat, 27 Dec 2025 08:00:00 GMT"
     },
     {
-      "title": "Vegas Golden Knights announce Theme Knights, Anniversary Knights for Season X - KLAS 8 News Now",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQeEx2amJ2SDg4LWNxY09ULVJsX2VKZjd1WHJ6UnNzN0FFbHhxcWdOUXpRdG1iZGZBUE4wUVlILUdfcU9Oc2NNdGt2Q0tVcXpSd1JxbElQT1FWSTV5djd1OGMtbVZQazB2QXVEMUhHbkxqTVJsUmNQbWdyci00ZnBGaGI3R2hNMktxdEtxM1lpT3NwaGFOUm02ZzFmc3hDSTJOUXlqQlBVWF92U0FmSmFhMzZ2TEJQYm9XRVdGSXdKSmZPWDd1MW92OV9R0gHPAUFVX3lxTE9TS1cySDNoNy1BNUdiVGcySFJidUd1alhnMUhWcUpJLVQ5ZUpkYXJYNG8tXzZMajJmRjducVBvdHY3blVRcF9iSmx6eG9ud2FOQkE4dXBtanBFY3NqSnRQWmFINjVGb3dhT2d3ZDdPZUdXUWlHMl9XbDI2dUtOUVp2a1JEWGhEUDdtY0lua0hNbkJTMFhwU0VfeW05WDRmSUdGMWZkUnQtdC1lY0F5MU1mcGNyODV3NmNjREh0Y2gzT0pmMXB2SWdtalhMUFNoNA?oc=5",
-      "category": "Black / African American",
-      "search": "Las Vegas Black History Month events 2027",
-      "published": "Wed, 29 Jul 2026 07:00:00 GMT"
-    },
-    {
       "title": "Celebrating Black History Month with the Top 5 Black Players in Las Vegas Professional Baseball History - MLB.com",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE11TkY2LW1iSk1kMmNPSmF4UHhGQmw2dm11R21iMl8zQ1dTYVoyRHFKUG9vTkZ4UTFMVmRtbWZnc1lIUjJFM3RucDVVVmlmTjFSMEYxMGhrVWU2Q2FMcWgyRmtRbHM3TXlSMEtvM2piNkpnMjBvSmdLZlNSZV9JMXc?oc=5",
       "category": "Black / African American",
@@ -122,11 +115,18 @@
       "published": "Tue, 24 Feb 2026 08:00:00 GMT"
     },
     {
-      "title": "MagicCon Heads to Japan, Europe, and the US in 2027 - Magic: The Gathering",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPRVNWLS1aR0JxS25iV3BPeGR1SGlTYko0dG5lSVUtSWJraFhIclRMV0ZBOUVKUWVHVTZUYV9wNTBkejRvLTcyVkVLakg1TVh5Sm9FeERSQ2lIa21PTjVQcUJiYmM2TDVySDhsd01tOGE3NEdVY3pfZFZUYUpZa3R5ZE5mclpMNVVyWktvckRHcHIzbWZZLWIxcllfVmdmUQ?oc=5",
+      "title": "Lamar Advertising of Las Vegas to Honor African American “Firsts” Throughout Black History Month - Nevada Business Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNYnhpbU9OV3RzSzNzLWFRRlJiUWd6WW1JLXIyMmJ1M0JsN3FJUS0yYzFiRU54UGpWRWgzNGJuSlZ5UzN1N1lBSWxmamZZaVBiNjBuRmlrcllDaU1ZX0ZqNThsTmRQbGZpTnNrUDdOSDJiZmtXNWpid2xBMi0yOExzWjVFLUFDRDdNNTdjeXJEUEtpVzdpVVFmY3JLc3dxYzJoNjRNTWY0akRPYi1DdXpfTjNkRlBaTEZXY2l0OHc4bDdDTENjREtZR0tR?oc=5",
       "category": "Black / African American",
       "search": "Las Vegas Black History Month events 2027",
-      "published": "Fri, 17 Jul 2026 07:00:00 GMT"
+      "published": "Thu, 04 Feb 2021 08:00:00 GMT"
+    },
+    {
+      "title": "Black History Month: Flying is a Family Affair for Charter Executive - NBAA - National Business Aviation Association",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOa2xRYUx0Mk1XRS1hd3dDRU94dzhCT29Hd0ZSZkZxeWNUUGFnMjdJRHQtOVlFWDV4cjJTQkpkb2Z4b0xYbVZBMDVLTDdILU1rOXAwOFp2TURON0x5YzRaMVdoWGo1WXJuSE9PalNvTlJXUU0zNjBoZ3RQOUI4dDV3dVU4cm14a2VDVGNWZk5TUmJ2NWprMnpWa1QtbEJTTl90d1E?oc=5",
+      "category": "Black / African American",
+      "search": "Las Vegas Black History Month events 2027",
+      "published": "Tue, 16 Feb 2021 08:00:00 GMT"
     },
     {
       "title": "Las Vegas to celebrate MLK Day with downtown parade Monday - KSNV",
@@ -136,11 +136,11 @@
       "published": "Fri, 16 Jan 2026 08:00:00 GMT"
     },
     {
-      "title": "Atlanta Dream will play all 2027 games at State Farm Arena, part of a multiyear deal - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZXhqWUtyVzd2djRBUG5zTFBxclozSHlNMGE1RTRHajFJcXdlZ2xNZ0xtSHpzbEFuN1pWaDlUQnJyVDQ0QURWZWN3SE1QZHdPT0lLRkY3dkdWdG1lbFN1bWd2UjhHbGNMSFhSV3ppZjZxMW5yalZ3ak1ESFhGZWZMN1JfdDhEVGVnSFhSUW95VHdXdw?oc=5",
+      "title": "State of the City Address - City of Las Vegas (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOcURjTGVaaDZERHVxWVNGdEdhUXNzY0FnazJOYXp3UTNOcjZxSmhhSzdGemc2VzR0RVNkRlhjQWU1ZE0zY3pyeWJ3MjJraDNRZG5FNGRtbUhTR0p5cUdMbDRjZExlc2YwQ2tHcW1DZVBBQVVTRkNWQ1duNHpYajRNUWZYYjM2TE84Ri02M3l4dnc?oc=5",
       "category": "Black / African American",
       "search": "Las Vegas Martin Luther King parade 2027",
-      "published": "Sat, 10 Oct 2026 07:00:00 GMT"
+      "published": "Wed, 22 Apr 2026 07:00:00 GMT"
     },
     {
       "title": "IVCI launches its 2026-2027 programs - NUVO.net",
@@ -148,6 +148,13 @@
       "category": "Black / African American",
       "search": "Las Vegas Martin Luther King parade 2027",
       "published": "Thu, 19 Nov 2026 08:30:00 GMT"
+    },
+    {
+      "title": "California Could Rename Its ‘Cesar Chavez Day’ Amid Abuse Claims - Forbes",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONUEweng1S2ZVbHM5ZUpycDNVTWJLXzhrTVdQbDk5ekhQSnJnVnd2eWRkMWZqSHQ4OUc3UmxaS05LYXVRd1k1WWZNMUJ6QXpELWxJdjlCTzJXdVNwOGNOVkNDV3hyejdMUU85V1pqZnZxelZtVmJkY0doSUNqTmJQUzVseTVpYkZSNGd5VlRqRmxGMElnYmZaUF91SUZYc3J5YV9jSTZGRktfdGplLUZ4RTJJTF9nVXNWUksxc29QYnVTNEVmUG5QRmN4N2s?oc=5",
+      "category": "Black / African American",
+      "search": "Las Vegas Martin Luther King parade 2027",
+      "published": "Wed, 18 Mar 2026 07:00:00 GMT"
     },
     {
       "title": "Best & Worst Weeks to Visit Disneyland in 2026 to 2028 - Disney Tourist Blog",
@@ -185,18 +192,18 @@
       "published": "Thu, 24 Sep 2026 07:00:00 GMT"
     },
     {
-      "title": "La Familia High School students prepare for performance at 2027 Coachella Fest - KESQ",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNX3NzZnRDVGZLZ3MxTDF5azN6ZThqaUtwR3l2WDlXVHNLRFZ3SXVKVGJsT1cwQkptczhyWG9zbFA4S1MxZVVsdnJjdEUwVEczQlJYX0R3dFNDMnV0RVB1M2xJd2JySjR1cWhzcVZtM1lRQ1VTUDdyQk51Mjk5SFhfVFgwbmRSV3ZJX2NZQnNxUkNTd2lvazBqcmhGRlZHU3d1MTA3LVlKdnVwWFRZbVhfMUpn?oc=5",
+      "title": "The Public Education Foundation to Raise Funds to Change the Lives of Local Students at the Hispanic and Latino Legacy Dinner - Nevada Business Magazine",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQUkk4SnFmbkNZaEN0TkF4MkdVdDdiZGozczJxZ2RPWnJxUi12ZFhsWV9nbEhER1pVQTYxTzNscnBaWEFHTzZIYmttZmVSekJxX0FpTHJudXZSeUl4SVY0SkN6ZHF1X21LNzZ6MjFnM1BnWTN5MUFrcTFXanVTQ2p4eEdudzRKQVFoZVlQeWVDRy1VMDFPN1NFVFhSX0Fibm9XcF93ZlV1ekFQaHhHdkhnLVpGWmtZN0gxY1pOdGhfamNpX1c0QTVZQ1RzNmlmYXhJTXJncDNPM1NfV1FtWkJVcU5QTzlXcGhNYXUyNnhmRGtWVDg?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Sat, 14 Nov 2026 03:14:44 GMT"
+      "published": "Fri, 02 Oct 2026 07:00:00 GMT"
     },
     {
-      "title": "When We Were Young Festival Will Not Take Place in 2026 - Consequence of Sound",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQTHp3WGN0a0k3WUZrcWJFZEtfbTd1RUp3ODN1TkpFbnBCa3loUGFuY1RLS3pzSE1CZjZuNU5jb2UtYUhCdnRMTlZXWUVKVURHVWF6MGVzaDlRcWdESnlLNGhHOUpIeEZxMnJDdWZxQW5NZTlNdnMyTzdZbFhVNXQ5OGF2aU45UQ?oc=5",
+      "title": "Palm Springs International Film Festival announces 2027 dates - KESQ",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUDliOTBwYzQtVXVMLWlSYWF3dHRMNUtvY1pQWXRzU25XaVc0UUlwSkJibXpHTVFtNGZZYXhEZFBEeGM3bVlpbjgtUVllUF9ncTdIS3A2NXJyMFhIVTFTUmx0NmRzM0ZjcW9Ma2tSQXVNNExaMUhNUGp2Z2cxelRUMEZqZzlTTEtCQlhCREFXOFJUOW1iQVkwYnBHQWZEZw?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Fri, 27 Feb 2026 08:00:00 GMT"
+      "published": "Wed, 02 Sep 2026 07:00:00 GMT"
     },
     {
       "title": "Devils, Prudential Center Announce Theme Nights, Giveaways for 2026-27 | RELEASE | New Jersey Devils - NHL.com",
@@ -206,53 +213,46 @@
       "published": "Mon, 24 Aug 2026 07:00:00 GMT"
     },
     {
-      "title": "Copa de la Diversión: MiLB’s Celebration of Hispanic Communities | Minor League Baseball - MLB.com",
-      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5YN1FWdkxIX0tsTEdhZ09lTnJWMmprREhwaUdXbUprZS1hb2tmTkhpcVh1NVVRX1FQOTdaTEQyTTF0N3pncWxrTEtB?oc=5",
+      "title": "Maná will be the first act to have a residency at Yaamava’ Resort & Casino - San Bernardino Sun",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPb1VXZEVRbDE5T2xNOXhMal81bXdSUXZmVkV6bmlMT0tWOVZJaVJFYVgwRHpkdW9aUDhxZjJUN1F6TWtGRmxENG5raExEdzBaZmN6N0o3M3laMm9zN1Z3dUJmZFY1ZEVVOTdHS18xSGdreG5OdmotWmZpSmhGRUtCaERvcUZONDdJalNzTjdETUlueFFrNDZNV3hBcFFUN3cxWGtLcm1NaHM?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Thu, 28 May 2026 07:00:00 GMT"
+      "published": "Tue, 20 Oct 2026 07:00:00 GMT"
     },
     {
-      "title": "Maluma, Prince Royce and more headline Rumbazo, a big Latin party coming to Vegas in September - Las Vegas Weekly",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxORGJoTEJtbFhOdmpqZjRxejJMZkdid0NDRHVaYmFzUmRKM042dm1HTl9RbGV5czlUeURxVTBsdk85NVNYaTRCSFF4UVZENmtOZG50RExGbXhuVGNfZ3lLQ3VpbkU5SUN2SGNLeVo4SnVYLWVxSERZbjNUOUxHdEpDVXd3?oc=5",
+      "title": "Carín León to Return to Las Vegas Sphere in 2027 - BroadwayWorld",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTnBtRmVrQnJFWVAyZ3huekMtZXlHU0ljeHJfek5Jb0FVYVRJQm5wOXMybTZIM1JzdW16enZSY0daS0czUXd4MHRYVkVaQ082WnJUZENzNDRwYWEzaFByMTdGVUJBbmFRRzRseHpRdWo0WmNQNEF1ZE9NeDdGbkJaYnZ1MW5VWnQwaHRaOF9fX281SlhhRDF3MVdaV1J6ZlFGS0VJMQ?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Thu, 14 Jul 2022 07:00:00 GMT"
+      "published": "Thu, 10 Sep 2026 07:00:00 GMT"
     },
     {
-      "title": "THE INTERRUPTERS to Headline Extreme Thing Sports & Music Festival - BroadwayWorld",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUGx1anZwZkYwTkJlUUxyZ3dHUUprc0ZMNThUbDJVQ2p0b2xLZlpESFg2bXI5Z3FYMTVlRzRFWTc2WkhtbnVGMmI4SzVnT1l2NUwzMzI0WklZYUthQ2ExV3lBV3B5OWZLM1ZjTy1zZFVINkRmZTRnWU9lRjVETFkwdWFvWEF4REhiVnV4NFUyZlRyblU5em9udnVRbnRPbWNWUmo2NmdkdVJCVWY4czRiSU00YWJrZjk1XzlTeQ?oc=5",
+      "title": "When We Were Young Festival Will Not Take Place in 2026 - Consequence of Sound",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQTHp3WGN0a0k3WUZrcWJFZEtfbTd1RUp3ODN1TkpFbnBCa3loUGFuY1RLS3pzSE1CZjZuNU5jb2UtYUhCdnRMTlZXWUVKVURHVWF6MGVzaDlRcWdESnlLNGhHOUpIeEZxMnJDdWZxQW5NZTlNdnMyTzdZbFhVNXQ5OGF2aU45UQ?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Tue, 15 Sep 2026 07:00:00 GMT"
+      "published": "Fri, 27 Feb 2026 08:00:00 GMT"
     },
     {
-      "title": "Sacramento River Cats Unveil “Festival of Baseball,” Launching the 2026 Promotional Campaign - MLB.com",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOZzRWODhTNWdhWkVMX1cybU5QZGRJZkFKeDVkWk84bUtoUzJNWTNHUDZYeWpYWklVXy1OUFlmVDg3YjJfQkgzRVR1Wmh0WHl4dUwxRklOOTV2a1JCV0lhSzFfVkNwZUtJZDdrT3VzQ3VYUUt1Mk0tLTdqOUVZVlNFQ0tOVmdvOXNCZTR3Nnl5Wk1MZnVDRG1icmlXWW9PZ2FwTl8yQVkzMVNNOThRTHlvc0x3R29wb1pJUzh0bmJvMHA2bmkx?oc=5",
+      "title": "Stagecoach teases reunited Florida Georgia Line as 2027 headliners - KESQ",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPME1yaWd2Z1U1UE41Yzl2dFJzZThEekY3MG5VdGtPYlY1NnU2Zlo0SmZZb0xodllyaWhIMi1QRHRhSXd6Mmk2VUREZzExNzZ6WWZPLVp3U1NIb3pQNGRIMXJhV2RrdmlyRFBYRFUtcVBvbnZwRFVNazNUdzJHY0xaUWdZWXRxUEZXd0dOSzN4WkQzMHhISUlGX0hEUFJzRXNyZzhkYnZQOWp5czNYbmNXdU9QQ2FZNGc?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Mon, 09 Feb 2026 17:17:52 GMT"
+      "published": "Thu, 10 Sep 2026 07:00:00 GMT"
     },
     {
-      "title": "Toucans Tiki Lounge closing this weekend; will rebrand in 2027 with new name - KESQ",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNRS12aklIbGNEZDNJcklBU3N6S3RURWZsaWpQXzZsRWhSWEkxLUhndWY0aU1PeVhGUjZOekF6WW9UeElCSUFmOWdPcUxxS0ctdTFWemFxOEYzYzBCT09sbHFoaFpwQ2N5VGJMWHprWWJQY3JTbnhNMnZENy03YWNldkl3dVdzMGs4RWdod05NTGlod1dPd29vakZndXFRVi0teFcyVURPVlFSbktDekE?oc=5",
+      "title": "Music Festivals Cancelled In 2026 - Music Festival Wizard",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1NOTBFSDRHRmVmdEUxVDFkeVV5MlowUVl4MTVIRzc3Rm1uWnAtNkpQWFpBcDI4Mnc3MjBVTWpPbDVrNGszVmdxSlRHUXNJNEVqcDFVdmdKWkg2OTdneDAzNnQxSEV1YlMzS3EzcWdWRUJodFg5WmRZQ2hB?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Thu, 12 Nov 2026 02:01:49 GMT"
+      "published": "Sun, 15 Feb 2026 12:25:12 GMT"
     },
     {
-      "title": "Predators Home Game Schedule - Nashville Guru",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBYSGxkVzI0RnlKM1IwanRJS3pGUlNjMlNMcDNON0JIZ1Q2eThLWTZiTnVHSTRwSl9rTkdpa0ZabWE3OEk4VDNNRzRSSkxCX0hWOGoyYWFkTldrMjlPTXRINE16Sm9NZEJLeXg1eA?oc=5",
+      "title": "East Las Vegas library collects Hispanic Heritage Month stories - FOX5 Vegas",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNXVxREltb0lMc004empwZDJRSnlrQy15aHdxM3ZMaVhpSDlqcEFITGdsTUJwOXdaYUdHUTcwYkxianpuYjlFdldQYXJEZzFUVTJtcTM2d29ORWpmcXo5bWRucF96OTI4clN3SVZGeG9iNEhlNW5GaGM4YU5OMWVpNmZIS1oxejhuRnZ6ZGxBNm12ZGFOMVd2M08wMnEydDBNNVkw0gG3AUFVX3lxTE1Jc2x1WUdtMHF0OW1rbzkzc3pUOURBTmVKeHIwR3VZTGxxQjV6MEVrU1FfNUhjdm8zVlpPUmJsTURTZGVoSlM1MWt6SHdNeWZMdVAyeEhfWmV5YVBQeHhwdVBmMjc3STFIcTg0Z0hfN1Zxb0hMX3NVVmdiemRFaGtkeDZVWE0ybl9ReGVlN0U3MlFxUXE3cW1nQVpUYmVsVUJ1ZlJOY3NyOFlhMG5MU1BDSE03VzNRZw?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Mon, 26 Oct 2026 07:00:00 GMT"
-    },
-    {
-      "title": "Ultimate guide to Mexican Independence festivities in Las Vegas - Las Vegas Review-Journal",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOTlNPNk5YSU1iel81YTRWTnp4SnB1bHRtc1paUGNFUjcyN1pYV3FkcDlKQW43Q3YxUXhaSGpOYndIY1p3eXpqOHQxR3FpQkVrUERtS2xEWU44N1VkdFJBMV9Mek9FdDZ4LVVhZjY1bnBNMXBVRHhrN0ZhajVoT09JbW5OV1NXZlFIalRkRHhFUzJSWHAzNDdrYXVsUUFaRGNFRlhZQUdiNFh1WFA5a3c?oc=5",
-      "category": "Hispanic / Latino",
-      "search": "Las Vegas Hispanic Heritage festival 2027",
-      "published": "Fri, 12 Sep 2025 07:00:00 GMT"
+      "published": "Tue, 22 Sep 2026 07:00:00 GMT"
     },
     {
       "title": "Annual Hispanic Heritage Month celebrations make adjustments in current political climate - FOX43",
@@ -260,6 +260,13 @@
       "category": "Hispanic / Latino",
       "search": "Las Vegas Hispanic Heritage festival 2027",
       "published": "Sun, 14 Sep 2025 07:00:00 GMT"
+    },
+    {
+      "title": "AJ Castillo to Headline 3rd Annual Hispanic Heritage Festival in Gibsonburg, OH - Tejano Nation",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNeWw2TVlQU0FjX1NuM1VYZ2V4MUNSNTNGSXpCUHYzalBZbEhNT1YyQ094cXZPZk1kSlktc2tfblVYS21pMHNvMGxydUQxVERSVHhMT1V3eGx1ZF9Bc1Jzek45dWE4em1MYUVld2ZKMGwzUGVVWTdEQ3IzTzBaa0d0ZEg2SHByZTVfYjQ2U1RfTU5XSXotMFVDNXptZFRLX1ZILVc3QkZ3Y2JtTkdIU2M0M2JaWDBpUQ?oc=5",
+      "category": "Hispanic / Latino",
+      "search": "Las Vegas Hispanic Heritage festival 2027",
+      "published": "Tue, 23 Sep 2025 07:00:00 GMT"
     },
     {
       "title": "Diez y Seis (Independence Day) - Rove.me",
@@ -318,6 +325,13 @@
       "published": "Thu, 16 Jan 2025 08:00:00 GMT"
     },
     {
+      "title": "El Paso 4th of July Fireworks, Parade & Events 2027 - Rove.me",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB5LURHUjRhRUZCV0g4c1hVejZ5M1V1VGNKbTlNRlJBWm5LNm9uM3N1SlhPUkRkV2lXX0k3dzY0dEZJOGFBbnlnejBqU3JNZ3ZmY2steTlIbEEwYm0xWUVYdjJ0M1ZnRVVoZDZJ?oc=5",
+      "category": "Hispanic / Latino",
+      "search": "Las Vegas Mexican Independence festival parade 2027",
+      "published": "Thu, 16 Jan 2025 08:00:00 GMT"
+    },
+    {
       "title": "Independence Day 2027 in Sri Lanka - Rove.me",
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBlalZ2azhLNE56S1JWRlc4a2tDNWZxby1vVVlUbFhxSGFBN3g2RWczakF6SXphUlQ0NjBsNGNCekVsVW82VnloRzBaSnVJX1BYNEFGOFJQbEI?oc=5",
       "category": "Hispanic / Latino",
@@ -346,18 +360,18 @@
       "published": "Mon, 27 Oct 2025 07:00:00 GMT"
     },
     {
-      "title": "Palm Mortuaries & Cemeteries to Host Free Día De Los Muertos Celebrations Nov. 1–2 - Nevada Business Magazine",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQOHNtY2ExOHZ4UGgxaklpZlY0NDdrLVI5QTdYb1FsTXpBQURiSUI4bGtnU0l2ME94RUFsUGFsZXhjNlRUQlVtRmNpclFBbXplMXVFY2RPTVdlaHlVS09NdGtiTFVKVWJoRXBwQ05jbkV0YnJCTWVtcUM0MXFYa0JTTDJKZ3Y3Qk50SnhjenphSnBPdFlKazk2LVpCNTAxRXVoV2prOHlvQVlsRkg0TldWZmxub3QwZw?oc=5",
-      "category": "Hispanic / Latino",
-      "search": "Las Vegas Dia de los Muertos festival 2027",
-      "published": "Fri, 23 Oct 2026 07:00:00 GMT"
-    },
-    {
       "title": "Life in Death: Day of the Dead - Las Vegas Review-Journal",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQNzlzUXJRaHNYdjFVVEJiSHlKeFNfdDkzNlVDbF90WU01bFFNMm13NFY0dGZHbk1GZ0U4ek54ckk1Q3pUSXVOYy1IUi01TE1meVJuUXJSWG5uTDdCV1h3SHdyQXRRbjBmR0xIcm5NT0RLWkR0VEwwVjZJRUdfdUVBR3kxNGtkOXpyYUhyQVU5ZXFkVTQ5MXdNWkU0emFMdlBOVEhmc3E1TkwxaGlCdHFwLUdqNTY?oc=5",
       "category": "Hispanic / Latino",
       "search": "Las Vegas Dia de los Muertos festival 2027",
       "published": "Sun, 01 Nov 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Palm Mortuaries & Cemeteries to Host Free Día De Los Muertos Celebrations Nov. 1–2 - Nevada Business Magazine",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQOHNtY2ExOHZ4UGgxaklpZlY0NDdrLVI5QTdYb1FsTXpBQURiSUI4bGtnU0l2ME94RUFsUGFsZXhjNlRUQlVtRmNpclFBbXplMXVFY2RPTVdlaHlVS09NdGtiTFVKVWJoRXBwQ05jbkV0YnJCTWVtcUM0MXFYa0JTTDJKZ3Y3Qk50SnhjenphSnBPdFlKazk2LVpCNTAxRXVoV2prOHlvQVlsRkg0TldWZmxub3QwZw?oc=5",
+      "category": "Hispanic / Latino",
+      "search": "Las Vegas Dia de los Muertos festival 2027",
+      "published": "Fri, 23 Oct 2026 07:00:00 GMT"
     },
     {
       "title": "San Antonio’s Woodlawn Lake Día de los Muertos festival canceled over ICE fears - San Antonio Express-News",
@@ -388,6 +402,13 @@
       "published": "Fri, 17 Jan 2025 08:00:00 GMT"
     },
     {
+      "title": "Silver state standouts: 36 must-see places across Nevada - Las Vegas Review-Journal",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb19rcTdjSjBOOHlWa3U5TzB4Yjl3cTFLYUZ4MkJUM0RBdVFRWVpPWGNyZS1vYnZvMVNtdHdneERVNHFkN3Z5Q1FLUmFULTdFRjF6RFJUQkdVOGpFOGM0WTBvbmNKWlV5aDQ2Y2xxWWpSMzF4b19uNkEta0RhNUhfRFd6czJLTm1xcE5EMXo4b1ViWjRFVHp0YjVmRDdHOUtlQ1RFLVVsTW5oamJ3?oc=5",
+      "category": "Native American / Indigenous",
+      "search": "Las Vegas Native American powwow 2027",
+      "published": "Fri, 30 Oct 2026 07:00:00 GMT"
+    },
+    {
       "title": "Native hospitality: Tribal gaming is finding a foothold in Las Vegas resort corridor - Las Vegas Weekly",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOXzVqQmVWT0VwOHNyLUU2YnRXbENHLXo5Z25rbUZGaG10b2p3VTdVemtJS3lYMGxNXzNFeXNYUFRLN3lMcE9UZ1lzbXlINlh2UlJ3Wk1EYWdfZUY2dDMybFM3NWo4dEo5UTR4N05WRFhybTczclJnUk1EeTkzQzI2LWdmVGxRb0ZHRXdMSWdYdDl2LVJ6MHVaUnJ3?oc=5",
       "category": "Native American / Indigenous",
@@ -395,11 +416,11 @@
       "published": "Thu, 06 Nov 2025 08:00:00 GMT"
     },
     {
-      "title": "Silver state standouts: 36 must-see places across Nevada - Las Vegas Review-Journal",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb19rcTdjSjBOOHlWa3U5TzB4Yjl3cTFLYUZ4MkJUM0RBdVFRWVpPWGNyZS1vYnZvMVNtdHdneERVNHFkN3Z5Q1FLUmFULTdFRjF6RFJUQkdVOGpFOGM0WTBvbmNKWlV5aDQ2Y2xxWWpSMzF4b19uNkEta0RhNUhfRFd6czJLTm1xcE5EMXo4b1ViWjRFVHp0YjVmRDdHOUtlQ1RFLVVsTW5oamJ3?oc=5",
+      "title": "Nevada Gift Guide: Father’s Day - Travel Nevada",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8zRG5lcTNCTFZOZkxnR0JQNHR5VWRrQVB4QkZINnk4dVZaa280dFhVOXhJYWxET2dYTC1ZUE9NNlNxcmhCUXZlNi0wZnNWNE1QTDRtenlJRkVfNlhHRFJxQjI2c0QyUHdsZ3JyX1FzNWlJZDA?oc=5",
       "category": "Native American / Indigenous",
       "search": "Las Vegas Native American powwow 2027",
-      "published": "Fri, 30 Oct 2026 07:00:00 GMT"
+      "published": "Wed, 15 Apr 2026 00:29:08 GMT"
     },
     {
       "title": "Morongo Casino Resort & Spa wins top awards - Banning Record Gazette",
@@ -409,11 +430,11 @@
       "published": "Wed, 16 Sep 2026 07:00:00 GMT"
     },
     {
-      "title": "Somerville HS Student Qualifies as Semi-Finalist in National Merit Scholarship Competition; Five Others Selected as Commended Students, Presented Awards - TAPinto",
-      "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPS1VJT3hQS05nQ21RbUJTa2JZaWhTekZaaTJCZ3o0ZThSNUJuUjlEQm9tcHl3T1FJQ3dwQk1iLXBrLVJHOGVmQTdKTC1rdDhsMHk5ZHRXMTQ1b0NTSUZLcDBVYi03QUtqWTRBcGU1blpLQUR2MVNvZVJwcmswQkk1QVFGZ1pqRVhNb3dUQVJIVE1DTjhRTkZMaG0zejliSW9TX1FKY0VkRkxKR2VBUkhiQjJZcjBTeS1EQzd1X2NYU0I4Rm10ZDNpM29MRllWS3dKclZMOUh5SzM0ajBkZ2pVWGxXc3d4VGlZS2IyZzhtRzBoZVpvZHFEX0t5S01jOTVzRXBfWVpFSllxeUFsMkNWN3c3aXNXZmwyTFJXN1V4SmM2QkNqNE04RHlzbEdVVnltSVFHcEs1dXpwc1Q1NEVMaQ?oc=5",
+      "title": "Kean Seeks $1,942,705 in Federal Grants for Infrastructure Improvements in Downtown Somerville - TAPinto",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQNjF5Uzh0YllfOVZXcnVkY1ZTVkVyendHQUIyUTZja0tkY3d1U05UanZlZ05yV193Nld5RU50XzE4OHhkRkVIYlpkekZBX2NFMEQ5QkFMU1E4WWxneEVFUFFnT01ESUlFR0tSRTZxZVEtNlFsME5iOGNTQV8xYjNMMnZBb2NVRjNrdVN5YzlBYXdET18wcEZZQ04zTjdwOGZwYzZRcGU4Nml4QlhxR0FJSjFocjdJcC1lMnNSQUFEZGRjNzZjQUJOZkN6T2xtdGs5dE1iSVFIcndsdWsxYVFmWWZHX2t5aE1LWlM2T3hJb3FQSTdK?oc=5",
       "category": "Native American / Indigenous",
       "search": "Las Vegas Native American powwow 2027",
-      "published": "Wed, 16 Sep 2026 07:00:00 GMT"
+      "published": "Mon, 20 Jul 2026 07:00:00 GMT"
     },
     {
       "title": "Thunderbird American Indian Dancers in Concert - Time Out Worldwide",
@@ -423,11 +444,11 @@
       "published": "Tue, 23 Jan 2018 08:00:00 GMT"
     },
     {
-      "title": "Historic outcomes for Black, Latin, Indigenous and 2SLGBTQ+ candidates in U.S. midterms - CBC",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5IY1hlaTlIVTBqOGdEU2sxWnZHcDdxaEEzNklkcGM4UERId2ZUNHJ5UlRRSUlnVDdPTmM2R0JSWXNUSU1tNG1YbEhIQkVGRzN0Q19EZUMxbGNURzdmc0NTT011dDZxS1BDV1dkMGZIeGtKX0ZtbUsw?oc=5",
+      "title": "Somerville HS Student Qualifies as Semi-Finalist in National Merit Scholarship Competition; Five Others Selected as Commended Students, Presented Awards - TAPinto",
+      "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPS1VJT3hQS05nQ21RbUJTa2JZaWhTekZaaTJCZ3o0ZThSNUJuUjlEQm9tcHl3T1FJQ3dwQk1iLXBrLVJHOGVmQTdKTC1rdDhsMHk5ZHRXMTQ1b0NTSUZLcDBVYi03QUtqWTRBcGU1blpLQUR2MVNvZVJwcmswQkk1QVFGZ1pqRVhNb3dUQVJIVE1DTjhRTkZMaG0zejliSW9TX1FKY0VkRkxKR2VBUkhiQjJZcjBTeS1EQzd1X2NYU0I4Rm10ZDNpM29MRllWS3dKclZMOUh5SzM0ajBkZ2pVWGxXc3d4VGlZS2IyZzhtRzBoZVpvZHFEX0t5S01jOTVzRXBfWVpFSllxeUFsMkNWN3c3aXNXZmwyTFJXN1V4SmM2QkNqNE04RHlzbEdVVnltSVFHcEs1dXpwc1Q1NEVMaQ?oc=5",
       "category": "Native American / Indigenous",
       "search": "Las Vegas Native American powwow 2027",
-      "published": "Wed, 04 Nov 2026 08:00:00 GMT"
+      "published": "Wed, 16 Sep 2026 07:00:00 GMT"
     },
     {
       "title": "Pioneer Day 2027 in Utah - Rove.me",
@@ -444,13 +465,6 @@
       "published": "Fri, 11 Aug 2006 07:00:00 GMT"
     },
     {
-      "title": "Nevada Class of 2028: Rankings Update - Prep Baseball",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZXhSNENWS2ttWW9objRiMzd4eDRLQlhBRGtRV0V4Z1BtaTZrR1N5Y2NyZlV6bXlHUXVCY0dVQlh2QzYtMTNkSVBFOVN5cnJjcHNDWnNZem5wTXFFT09sdVl0bC1XUVFWaGRpWjYtRHJaLVVTVzVpdWMtMVBqYnBSNGtjVGljTDl0OXNmX1BONDBJOTg?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Tue, 10 Nov 2026 08:00:00 GMT"
-    },
-    {
       "title": "Nevada lawmakers propose alert system for missing Indigenous people - Nevada Current",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMExKek5jUk10di1kMmIwMkNnNWNhNmRHYmlhUlRpWkJOMUlvZUloU1JyVm1NYkJEcmM0bWlZZXJEN1ZDdkNBVTVaaE9oQkNtdGpTOGNTb2c3MzNucjVvUDVhVzNEZTdkUGluVHFRU1lrSnpDbTg4RDZTdWIxNHBfNjA5Wi1WYkJQdl9QNjNsNGRucGd0WEQyMEpaZ3dweS1Ic1NNWEJuNlI?oc=5",
       "category": "Native American / Indigenous",
@@ -458,39 +472,39 @@
       "published": "Tue, 13 Oct 2026 07:00:00 GMT"
     },
     {
-      "title": "EmpowerHER 2027: Hanna Olivas and The Hollywood Times Explore Media Collaboration to Amplify Women’s Voices in Las Vegas - Hollywood Times",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOXzN1M0ZvSHoxZjlraDV5MGVLVnI5b054THhXLU55akRTMDJxRzk2MUFFLWY1cUJvaGdMUkpLNDNuQ1ZDem9QRDFKSTVFUlZtSVhoTlFEaFlxQTg0LWZjOV9XcUwzclZyalI3VmxwclZKQ3dGb3k3c2t3QzUyNm1lRFgzVnZORDF0T1ZXcWU4YkI4dzZMVHgxSjBZbWV4a1ZmTTRHaTVXZHhxUFVIMExLTTJPYklFclVPR2RrNUVCWGRHaXNRTk9FT094SHExOUVZVWtudC1VM25Zb1pFc2FN?oc=5",
+      "title": "The groups running these election ads in Nevada won't disclose their donors until 2027 - The Nevada Independent",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYUhoSGRsYnVQSDItVWNEaVNXcHM4WHhvZmJVempHN1VxampqNE9mSXNUaWNCU2FGX2wtb3BCbTFZNmxFOWZZR3lrMUI1U2s2YWtpQ1RzNnRfRFRnMU1TTTMtZ3RCaVk4SGRoN2VjVW9oSk80b3RwN0szZGpYcXl2UGNuUXBjUEFCLXdxRjlLUE5EU0FtUnk1RV96ellwY0dFOWE4R3RYVFExN3JDZkt3VHU2UUhMcF9XSTVXdlFoVExrOEs5?oc=5",
       "category": "Native American / Indigenous",
       "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Tue, 03 Nov 2026 04:33:08 GMT"
+      "published": "Mon, 26 Oct 2026 07:00:00 GMT"
     },
     {
-      "title": "GFL announces NSAC approval for Las Vegas card — four days after it missed its launch event - MMA Mania",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPNE9aWVRyTXVjV01HLVNxNzEwYU9CbWYtVF9CUmx6cGJYV1M1OTJROTM1djBoZkVTR3J5bnRfXzN6aWV3ZndUeElqTHR6ZmVpdDJTczhsVEsydTNmdTR5QV9OVHE3VFFuMzBNWk5NQnNRaGRvcE5GaFJPMUVKdktReThQQ0ZZY3Mwamg5TGxTd0ZocjQ3RHlpYi1ENUo5c25DeE44aER4cU01MkZtWjdISFZjVVFyTDFubVJYX2JCSzk4YWljd0FWMVBUdWhrM0U?oc=5",
+      "title": "Indigenous Peoples’ Day 2026: What It Is and When It’s Observed - The Old Farmer’s Almanac",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ZSDY4alRjTWY3Zi0wYzJlT1hsLV94dEEwY3FCanc5ZDMyOFVfUmJtXzlSYUwxTGw2QmVTYnRiUEVUU3NtSVNGRldtczVubS14aXlxNDU5RlJ4dw?oc=5",
       "category": "Native American / Indigenous",
       "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Fri, 23 Oct 2026 07:00:00 GMT"
+      "published": "Wed, 07 Oct 2026 07:00:00 GMT"
     },
     {
-      "title": "Top HR conferences for 2027 - HR Dive",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1UYklaX0VnLS1Vb3k0NkhmeHFFTVpOc3FyTU5XT1U2UnViZng4SmRWT1FLbnlrTThvb1FDRmlodk9qYkhOemRvcU81M2lsbTFOSEZYTG1qbFBKdFJkOEZVcWt5bXRDOUw4SGxjZEJLUy0?oc=5",
+      "title": "UNR Med celebrates Class of 2026 at Match Day - University of Nevada, Reno",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1Rb3htWlVhNElPWVFsTDdPenh4em1HVkM1dW11V1o2VHFRS1FzQlVxWVZfSWxHZWxMT1UwSEM4RUROWjl4U0UzSWdyVFJlQnAwcHFyU093UFdESnRZOTRfNWpIZEtTQ2p4?oc=5",
       "category": "Native American / Indigenous",
       "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Tue, 06 Oct 2026 07:00:00 GMT"
+      "published": "Wed, 25 Mar 2026 07:00:00 GMT"
     },
     {
-      "title": "Rodeo season heats up with Sky 9 Events announcing Battle on the Border, RMPRA year-end finals in 2027 - St. George News",
-      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOdE1jZ2llX21rTDg0eFhpb0dnUWNycEZTYzZGRXd6MDktMHdmVmQxTG50dk51NXRrbWhvRGpyU2xWZDJYQTY3ZkpZUmo5d2pQci1TN0JaS29rSTZyanZqSUtqVk9paW84Umhaa0JPNTFhU2hQQ0lMMFd6SWM4NWJwUkl3ckF1OTFBQkY0UzZ5MGoxQnF5Mk9jekU2czBrdzFIQ0xkU1EyZzJFZ1FqajZCcUNPRTFYUi1DYmxRLVlVNnE1QWd5U19WZnF5MFExZnlpT3VlczRKYWNobTkyekNwNjlCY2hOUnZ4aS1NTWdzNlRkWkxKY1dONFdR?oc=5",
+      "title": "AI Expansion Threatens Power Supply for 50,000 Lake Tahoe Residents - Broadband Breakfast",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPRjVLZTJPTFdvTkFWMHNuWDVFM1JTUC1jcE52THpjZTI3X0tiekh4YmRvcWpqRDBPcGxvRzJ0WTlTdGU2WFlWd1RqeVE3MmtOSWh6M2N4c2JhakwzM2NicVpuTE9ESzNuZjVoLXFORGtYTXU2LWtCNVdJNVZnNnAxTjR1WW8wWWl6dkxGWS00Y1F2VGpoeFVwYU5KM0tXeF9X?oc=5",
       "category": "Native American / Indigenous",
       "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Mon, 20 Apr 2026 07:00:00 GMT"
+      "published": "Fri, 15 May 2026 07:00:00 GMT"
     },
     {
-      "title": "Track & Field Kicks Off Outdoor Season On Saturday - University of Nevada Las Vegas Athletics",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQazVnZ1ZuNjJPdkhZbTZPY3dnVHJQLWIzRDhLWlp1VzBLWTRjRzJCT0dLaDZaSEZFSWc0NTRHbkpybXo5MnNmZDhqTHdMLUxHRGJUb2VSczhkaEZPVFozZnJsNXJpdFpjcXBveWt6VkVDQm1YQUNkYnJWRFNmV1Y5Q1JiVTRZd2VfVk1nRk43Sm5ndGVqREtHd3hSamMxa2xZMHBHYkNLWjRIYVgyOHU0?oc=5",
+      "title": "25th Anniversary of Indigenous Peoples Days in Nevada City - YubaNet",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQmxka05NVTZnT2tkUU9aQ3NPcnpTbkc0T2M1eVdmdHZLd0RJYVJrbGFmcWljM3FZMzZ2S0tGNGEtOGpucGotQzctWTBxRWlLVkVvSXVHRUM5R3pnMUQxLTZKdHZhdVpuUEQ1Q3hFNXB3bFQxTzZKRE1mcHFKSm5sN3VSako2bkM5RWExN204dkpGUQ?oc=5",
       "category": "Native American / Indigenous",
       "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Wed, 13 Mar 2024 07:00:00 GMT"
+      "published": "Tue, 19 Sep 2023 07:00:00 GMT"
     },
     {
       "title": "2026 Future Games - Prep Baseball",
@@ -500,102 +514,25 @@
       "published": "Thu, 05 Mar 2026 22:32:18 GMT"
     },
     {
-      "title": "Tony Stewart to make NHRA driving debut at Las Vegas - Las Vegas Motor Speedway",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZUdSdEQ4c1FCbnJkbXBqYWNiaUNKc0czMll6Y0RqajZlRjM5blhXcDZHQjhQTUJTcllZOUV3d240dl9Ga1pSeHpaTGxJNjdxOEkwdGJYcktKUGRLaWFzeGNiaERxTVlRclBRTi1hS0EzcDhWNW9GaXRTUjhVNndBSjlXOWplUzZVRjRv?oc=5",
+      "title": "'It's like we don't exist': Nearly 50,000 Lake Tahoe residents face power loss as utility redirects lines to data centers - Fortune",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVXdBZlJWTmY2OERRbGxGcWFSc3FfbjBpS0RCV1BSRUZQY2g1LUtENWlvbzFUbFB5OXY4MlBtd2I2Tmo5cV9zYTEyX2UxQjFZWGRYVnNGTzRmcEFyRUxRb2tWTHRSZ1BDU0JlUkd0UzNEWGNhWmI1ZVMxNFhKVVNua0pzbl9odlNqQW1n?oc=5",
       "category": "Native American / Indigenous",
       "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Fri, 28 Oct 2022 07:00:00 GMT"
+      "published": "Tue, 12 May 2026 07:00:00 GMT"
     },
     {
-      "title": "Are Schools Open on Columbus Day 2027? Here’s What You Should Know - HowToiSolve",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1OT2RpLXVSUjhQMXFNcU1VRkhQUjg3UWpvY21QMmw2clppTVFfTEZzUVo0VkJ1czl3c1lSVEZKbXlEYjczcjVQR1dvamFGY3hwb2E1Vkl3ek5GdkZmc2FKXzJyZW5DaHBpV0JBdVRn?oc=5",
+      "title": "When Is Indigenous Peoples’ Day 2026? Date, History, and Observance - Farmers' Almanac",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB2c3QtMHhIZndpTFF2T01tMEFwdEhObWZpOUdjQVI1T3hyRVZ3eUtIXzdITWtRRFUtMkl6OU1rRXBMd0YtbmVHelRFUERfWm04dTJBbFZPNERrci1MSUc1MXZITmMxSEFMb20wOWlB?oc=5",
       "category": "Native American / Indigenous",
       "search": "Nevada Indigenous Peoples Day event 2027",
-      "published": "Mon, 13 Oct 2025 07:00:00 GMT"
+      "published": "Fri, 29 Sep 2023 04:54:31 GMT"
     },
     {
-      "title": "Art Dealer Sentenced for Falsely Claiming Native Heritage - Hyperallergic",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOLVU0ZjRmSHZqOXVnRHpPdG9OWmNzTzZKa3FMbUhVNDlVNG9sNlhXZTl3QlJEN2xROXZXcmp3WUpqeV9ldEZuZk1MMWFNdjZJbFhWQ1ZHZURiMVpCYWU2SUxnYzhvd3V0emZiZzlNVTFoZkh1WC1BUEdRc3FzX29MYkVWR2ZOMk5UVVlSZQ?oc=5",
+      "title": "Sloan Canyon National Conservation Area - Bureau of Land Management (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdmJRNloxb2ltLWpIYVJrSl8zbTZlaXRVc0dZWFBvVHJxeTBqSXBVSkRWX2pONURGcktrUkhwQ0RiOE4ySDllMkhOdjhubmRUc0VlUU52YmNWUVkwQmJuNm5Qb19zZk5UQWZNbTZwSTRSN3ZHU3hJOXNwclJ2T0d3WG1GV1Z5LXM?oc=5",
       "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Thu, 19 Nov 2026 19:24:05 GMT"
-    },
-    {
-      "title": "FOX 13+, FOX LOCAL primary local broadcast home of Seattle Torrent - Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBfaXVfcTBQQUFRdDZTVkdLLXpxTWtRWU95NVMxbGQyNkhVMGdYM0xNMGFPRWkyRE1aYlpyZlI4U2pjdWRCcG9WcTZBRWFKYjREYks5TlZ5Qk5TOHlxRXp2M0JFZnJLZ1JGNlF5ZjlLY2I1ZlJzQWQ4cEgya3luQQ?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Fri, 20 Nov 2026 18:18:00 GMT"
-    },
-    {
-      "title": "Game Promotions Announced for Football vs. Wyoming - University of Nevada Las Vegas Athletics",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOaXlPbEpZNXNYZlR2X2ZtclRybEJCQWhZRU5zamVoaUI4T2J4ZUc4cWNiQU95ZG91TzlqVzl6WnZCV3Y5RkNWdDI0d01NRU9uZ09BWnkwRVZ2QWNXZlg2LTl2UmJuUkN1WkUySzlYSTN5X0tNc0JFaE92NUt1UGw4enBoTzNyUkNwRzlsa1RwRlY?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Mon, 02 Nov 2026 08:00:00 GMT"
-    },
-    {
-      "title": "Somerset County Medicare Assistance Available in Somerville for Residents & Caregivers; Open Enrollment Deadline is Dec. 7 - TAPinto",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxPd0Noc0dwTHc5a1JkLW5vMUNlX2l3aER4OVc1ZHhDQ1JwTGpjek1UMnZzMmdxVGNOeXFhMXAwLWRhVmk0d2xjQ0Z1NlFUdUhfaktaRWlBaVZDZllTQ3BLX194VjBvVWlfNnBDNG95cWhncHpXWU51NC1USll1ellhTS1kWmdDSU5BTVA2aE8zOFFEX0ZVTzJnUjAtTWhkSm5oZEx0TlBRbFBDc2psa2VmbnR0Y2hjUW9pUXVwYmZ5d0RRU3RSSTdWUzlCVGxYT012dlJhV2luWVVDeUFVdE1pX3hUQmRXTUR6M3FrMm5PeXdtTlNhc0p1SnpwenhrWDNZQlZaZUhQYTNUTExyTjFEVUxOSHVJRU0?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Thu, 19 Nov 2026 22:00:16 GMT"
-    },
-    {
-      "title": "November highlights Native American cultures, from salmonberry picking to traditional tattoos - Union-Bulletin",
-      "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxOcUYzYjROeC03WVhRNl9KeEJQYmVCNTRpNDBwbFVvaE45TTJoSXZEaU9ZWEt3dHdGZ1BxRnl6NXdXSFQzVGJUejdsTnNVaDhGUVpFdDNlUzVhLUJwUTgzbmNvbV8zZVozaUVkaEJwdFRoT18wcEdkbndtakQ1S2NYX3J5SGN1STYzNkRzY2lSX1ZYbFhLei1scnpZWmgtMUFucnc2a0dtQVdWR0JTVlY5bDRHeGxQWFc5R08zakRhbE01RGJHZS13YU9NSHhqYVdjSy1pZkNuMzhEVUVCSHRXLTkwRVZFbExDZGZ3ZWxuUzNXX3paMEtsUDVNeTZlYndJbFdXdWx2M1M4LUk5MjdmWEFXcTJWTkNNRkIzN24zSQ?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Sat, 31 Oct 2026 07:00:00 GMT"
-    },
-    {
-      "title": "Minnesota Wild Single-Game Tickets for 2026-27 Season On Sale Friday, August 21 - NHL.com",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZmdpT0JLWGVJU255VmtsRHIxeEFWcGM0RDJ0WE9rLTFqZDJxY1dkQ1lpSkNqN3lNZXU5bzhTZGtBTWdOUzBvWEQ2UG9rNlpOOVMxRm16dkExZjVqeXdnSlczX2hmY1JfN0tYX2VWUnpuNXZsUTNXSUlUUjZIbUh2RFhQSm9ZMWoyOXA4MWpLUF9RSF9zanMxdjJseG11bFZXRGpUaU5RR29YY3JCZWdLWUpRdkdVdw?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Thu, 20 Aug 2026 07:00:00 GMT"
-    },
-    {
-      "title": "Golden State Valkyries Unveil 2026 Promotional Schedule and Heritage Nights Lineup - Golden State Valkyries",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZF9aZFFRQ3pJSUZjQUU0TWd1anpVb25iclpvQTBsZHdfYXRrbEw4cE94OEU0c19QNTBOajdub0QtSnJIUWhNdGhrQnFraHBvN2xVeWY3T3dPdEEyZkZjM081MmJQZ044eUd2c3R2LWNraDhOd0tFTnNPNldWWnRiR2wxejVycVRiTldvSHlSRDdDX0s2bmY0d0tueUFycTZIcG9rMThZcmJxdGwzU1dnbWJTX0xtclFDUVZxU0xsOGk?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Wed, 08 Apr 2026 07:00:00 GMT"
-    },
-    {
-      "title": "EDC Las Vegas 2027 to span across 2 weekends in new ‘Dusk Till Dawn’ concept - FOX5 Vegas",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQd3R6SWg0QTlpRVpHSXRjRDQxaGtHNjFGTndQRE1Mbm5uMC1sRjZzZk5WaFJna1E1aXR3LUJ0Skh3V3Y3U3hoN2xwSk94Uk1oYTd4REttOWFLTHB3OVFQd2Nqenp4N2J0UnZjQkkzdkhQcW0zb3B2SXc0X0JMd3E3Q01Rc2RmZE5Nc0hHMmEtZ0FpLTRsTHBTYjdiV2FnVlJzZkxJ0gG3AUFVX3lxTE1oY2ptenFhRDdlcmdEeGN5RVJwRjU4MHJ0WWtMZEdLS1dZd2FlRFZPWUpmZVFnVkd2X2ZEbkQxeTlEWjY0Y3dFY2o5OW4wd1FtYmVURGhvMm1oWTdRU0pJSkJXc05vS19SMHJHQ2gzS295Qlp1NXZYck1KeEVXOXNhRlhDeWhQLWxjUDlETnVXUUhiclNlNEl4Sks1U3VZMV9BZUs5c1ZiNW42VHk1QnJHSUhXb0NNYw?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Tue, 19 May 2026 07:00:00 GMT"
-    },
-    {
-      "title": "HIMSS, Tribal data sharing and the importance of Native American Heritage Month - Healthcare Finance News",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbWhacElwVDNISW5MY0pkeUF6LThUWExrSThIMG9ITDZDajNRRkNoR3pSUXdNUWRTWEpudEdqT1E1VUVpRDZvcFhmN0RwU1MxU0hDMzFVRmpHbXh0WURZMHpmdDFaZDFPcXFDeXZwRnk3QklaMjBwWjhLQjRCVllHQVdNRTdwRE91YXhwa3J4WWhLdDRzX1F0ajJGUDE1Y0xudXdoemwtbzFQTEJmQmVSVjlrTVo?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Tue, 25 Nov 2025 08:00:00 GMT"
-    },
-    {
-      "title": "Avalanche Announces 2026-27 Schedule | Colorado Avalanche - NHL.com",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1qTUU3WXR1M2Q0U21HcjJoSGpoQ3FObllpeDVsZUtXRHk0QWxOWnIyTkVZZFg4cnpQelQzbWYwUFJKckpVczhCV2JpVUEwQXV1VThrV0ZCc2Z6eG1IZEpON19UZ2hCWi1zMmp5SG5FUFRscEZsbjU0eHVfZw?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Thu, 16 Jul 2026 07:00:00 GMT"
-    },
-    {
-      "title": "Redbone: This band with Fresno roots topped the charts and drew on their Native American heritage - KVPR",
-      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPUVhISE1NLU5DTXhrUVhheDVqRi1iZHdRUVJGZVZqdUlEWldmQzZkbDhfTDdGMERLeGVBWjNVTW0xN2N0VkxiaGVlV2dpdW5hU0RwZXk5c3FVMDFzNmJ0QmlsdTNwSjFUanlOWU1DbF9pa3VMZ2RPM09kaXdTMGI4TnZ3SWRUZWdiaVhpcEFNSkh3ZldrblRueXl1dURoUUsyaGFRbkRIZU40MWNWcnZTYzVpU21CTjhXS3h1WHpadzh6dXR1QVdCbU9LSFJHT2gxUzF1dER0MUlNcVZBSXZXNmlHRHdONzBKa3BsdU5n?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Tue, 04 Nov 2025 08:00:00 GMT"
-    },
-    {
-      "title": "Frank Brown: Celebrating Native American Heritage Month - Buffalo Bills",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ2s2a29NYU52bUJXQmltMWNZbjZ1VVQtQ01VaUl1RXN2dWo1dlJQNXBxaFN3aWtNcDdELTZSZDM4YVdyU0VabUVwc0hGZFRWWUJZcUI1OHI1TEh2WDhNakZUMVdKem9fNlJJa1JvRU8teUhDUkc2RXJsSDlSZ3FoSjJHdWVsdjNHNFNpYUVxQVgxOW8?oc=5",
-      "category": "Native American / Indigenous",
-      "search": "Las Vegas Native American Heritage Month 2027",
-      "published": "Tue, 01 Nov 2022 19:58:25 GMT"
+      "search": "Nevada Indigenous Peoples Day event 2027",
+      "published": "Fri, 15 Dec 2017 08:05:28 GMT"
     },
     {
       "title": "Free Jazz in The Park Series - Clark County (.gov)",
